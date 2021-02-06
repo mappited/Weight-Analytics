@@ -6,16 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href = "fonts/SFPro/stylesheet.css" rel = "stylesheet" type = "text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>Weight Analytics</title>
 </head>
+
 <body>
-    <header>
-       <div class="logoName">WeightCalendar</div>
-        
-      
+    <header class="header">
+        <div class="logoName">WeightCalendar</div>
+            <a class="login-block transition cd-signin" href="#0" ><div class="login">Вход</div></a>
+            <a class="registration-block transition cd-signup" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="register" >Регистрация</div></a>
     </header>
+    <h1 class="firstMotivateText">Отслеживайте свой вес!</h1>
+    <h2 class="secondMotivateText">Соблюдаете диету или занимаетесь спортом? WeightCalendar идеально подойдет для вас!</h2>
+    
+    
+    
+    
+    <div class="cd-user-modal">
+        <div class="cd-user-modal-container">
+        
+        
+        
+        <div id="cd-login"> 
+            <form class="cd-form">
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                    <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                    <span class="cd-error-message">Некорректная почта!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signin-password">Пароль</label>
+                    <input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
+                    <span class="cd-error-message">Неправильный пароль!</span>
+                </p>
+
+                <p class="fieldset">
+                    <input type="checkbox" id="remember-me" checked>
+                    <label for="remember-me">Запомнить меня</label>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width" type="submit" value="Login">
+                </p>
+            </form>
+        
+        <p class="cd-form-bottom-message"><a href="#0">Забыли пароль?</a></p>
+        </div> 
+        
+        <div id="cd-signup">
+        
+            <form class="cd-form">
+                <p class="fieldset">
+                    <label class="image-replace cd-username" for="signup-username">Username</label>
+                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signup-password">Password</label>
+                    <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width has-padding" type="submit" value="Create account">
+                </p>
+            </form>
+        
+        </div>
+        
+        <div id="cd-reset-password">
+        
+            <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+            <form class="cd-form">
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                    <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width has-padding" type="submit" value="Reset password">
+                </p>
+            </form>
+        <p class="cd-form-bottom-message"><a href="#0">Назад к входу</a></p>
+        </div>
+        </div> 
+        <a href="#0" class="cd-close-form">Закрыть</a>
+       </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/modal.js"></script>
+
 
 </body>
 </html>
