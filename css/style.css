@@ -1,6 +1,5 @@
 html{
     border-top: 5px solid black;
-
 }
 body{
     border-top-left-radius: 5px;
@@ -75,7 +74,7 @@ h1,h3{
     letter-spacing: 2px;
     color:#49637E;
     text-align: center;
-    padding-top: 150px;
+    padding-top: 135px;
 }
 .secondMotivateText{
     font-family: Montserrat;
@@ -85,16 +84,9 @@ h1,h3{
     color:#49637E;
     opacity: 0.76;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 11px;
 }
-.cd-user-modal {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
-}
- 
-  
-.cd-user-modal.is-visible {
-    visibility: visible;
-    opacity: 1;
+.mainPng{
+    width: 100%;
+    overflow: hidden;
 }
