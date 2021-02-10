@@ -1,13 +1,12 @@
 html{
     border-top: 5px solid black;
-
 }
 body{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin: 0;
 }
-h1,h3{
+h1,h3,h2{
     margin: 0;
 }
 .header{
@@ -15,21 +14,22 @@ h1,h3{
 }
 .logoName{
     font-family:SF Pro Display;
-    top:39px;
-    left:48px;
+    /* top:32px;
+    left:48px; */
     font-size: 32px;
     font-weight: 900;
-    position: absolute;
+    /* position: absolute; */
+    margin-left: 40px;
 }
 .login-block{
-    position: absolute;
-    top:46px;
-    right: 320px;
+    /* position: absolute; */
+    /* top:44px;
+    right: 320px; */
     text-decoration: none;
 }
 .login{
     font-family:SF Pro Display;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold; 
     color:black;
     
@@ -41,33 +41,48 @@ h1,h3{
     opacity: 0.7;
     color: black;
 }
+.right-menu-buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.header-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 30px;
+    flex-wrap: wrap;
 
+}
 .registration-block{
-    position: absolute;
-    right: 50px;
-    top:38px;
+    /* position: absolute; */
+    /* right: 50px;
+    top:34px; */
     width: 213px;
     height: 50px;
     border-radius: 15px;
     border:solid #114EFF 3px;
-}
-.register{
-    position: absolute;
-    top: 7px;
-    left:41px;
-    font-family:SF Pro Display;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    color:#114EFF;
-    text-decoration: none;
+    margin-left: 50px;
+    margin-right:40px;
 }
 .registration-block:hover{
     opacity: 0.7;
     transition:1s;
     color: black;
 }
-
+.register{
+    /* position: absolute; */
+    /* top: 7px;
+    left:41px; */
+    font-family:SF Pro Display;
+    font-weight: bold;
+    font-size: 20px;
+    color:#114EFF;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 7px;
+}
 .firstMotivateText{
     font-family: Montserrat;
     font-size: 66px;
@@ -75,7 +90,7 @@ h1,h3{
     letter-spacing: 2px;
     color:#49637E;
     text-align: center;
-    padding-top: 150px;
+    padding-top: 40px;
 }
 .secondMotivateText{
     font-family: Montserrat;
@@ -85,16 +100,15 @@ h1,h3{
     color:#49637E;
     opacity: 0.76;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 9px;
 }
-.cd-user-modal {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
+.mainPng{
+    width: 100%;
+    overflow: hidden;
+    padding-top:20px;
 }
- 
-  
-.cd-user-modal.is-visible {
-    visibility: visible;
-    opacity: 1;
+@media (min-height:960px){
+    .mainPng{
+        padding: 10px;
+    }
 }

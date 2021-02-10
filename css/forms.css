@@ -1,0 +1,92 @@
+/* Reset input styles */
+.outline-off{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+a.forgotten:hover{
+    color:rgb(10, 151, 10);
+    opacity: 0.5;
+}
+a.switch-button:hover{
+    color: white;
+}
+.login-submit{
+    margin:0;
+    padding: 0;
+}
+/* end */
+
+.label-font{
+    font-family:SF Pro Display;
+    
+}
+.label-form{
+    width: 302px;
+    height: 42px;
+    font-size:20px;
+    border-radius: 10px;
+    border:0;
+    background-color: rgb(231, 231, 231);
+    padding-left: 10px;
+    
+}
+.login-form-centered{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-submit{
+    color: white;
+    background-color: black;
+    font-size: 30px;
+    width: 123px;
+    height: 52px;
+    border-radius: 15px;
+    box-shadow: none;
+    border:0;
+}
+.-margin-not{
+    margin-bottom: 5px;
+}
+.forgotten{
+    font-size: 20px;
+    color: rgb(184, 184, 184);
+    margin-left: 30px;
+}
+.log-in-forgotten{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.registration-switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.registration-switch-div{
+    background-color: #00CC33;
+    border-radius: 13px;
+    width: 302px;
+    height: 42px;
+}
+.notation-h{
+    color: rgb(184, 184, 184);
+    font-size: 15px;
+    margin-bottom: 5px;
+    /* ПОМЕНЯТЬ РАССТОЯНИЕ МЕЖДУ СЛОВАМИ! */
+
+}
+.switch-button{
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    letter-spacing: 0.5px;
+    margin-bottom: 50px;
+}

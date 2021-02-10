@@ -6,27 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href = "fonts/SFPro/stylesheet.css" rel = "stylesheet" type = "text/css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/forms.css">
+    
     <title>Weight Analytics</title>
 </head>
 
 <body>
     <header class="header">
-        <div class="logoName">WeightCalendar</div>
-            <a class="login-block transition cd-signin" href="#0" ><div class="login">Вход</div></a>
-            <a class="registration-block transition cd-signup" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2"><div class="register" >Регистрация</div></a>
+        <div class="header-div">
+            <div class="logoName">WeightCalendar</div>
+            
+            <div class="right-menu-buttons">
+                    <a class="login-block transition" href="#" id="modalOpen" ><div class="login">Войти</div></a>
+                    <a class="registration-block transition" href="#"><div class="register" >Регистрация</div></a>
+            </div>
+        </div>
     </header>
     <h1 class="firstMotivateText">Отслеживайте свой вес!</h1>
     <h2 class="secondMotivateText">Соблюдаете диету или занимаетесь спортом? WeightCalendar идеально подойдет для вас!</h2>
+    <img src="img/sketchpng2.png" class="mainPng">
     
-    
-    
-    
-    
+   
 
+    <div class="modalWin" id="modalid">
+        <div class="modalWindow">
 
+            <div class="modalHeader">
+                <h2 class="modalHeader__text">Добро<br>Пожаловать</h2>
+            </div>
+            <div class="modalBody">
+                <form class="login-form">
+
+                    <div class="login-form-centered">
+
+                        <p class="fields label-font">
+                            <label class="email-label" for="signin-email"></label>
+                            <input class="email-input label-form outline-off" id="signin-email" type="email" placeholder="E-mail">
+                            
+                        </p>
+
+                        <p class="fields label-font">
+                            <label class="password-label " for="signin-password"></label>
+                            <input class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Пароль">
+                        </p>
+                    </div>
+                    <div class="log-in-forgotten">
+                        <p class="fields label-font -margin-not">
+                            <input class="login-submit outline-off " type="submit" value="Войти">
+                        </p>
+                        <a href="#" class="forgotten label-font">Забыли пароль?</a>
+                    </div>
+                    <div class="registration-switch">
+                        <p href="#" class="notation-h label-font">Если у вас нет аккаунта Вам нужно</p>
+                        <a class="switch-button" href="#"><div class="registration-switch-div" >Зарегистрироваться</div></a>
+                    </div>
+				</form>
+            </div>
+            <div class="modalFooter">
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modalWin" id="modalId" >
+        <div class="modalWindow">
+            <div class="modalHeader">
+                <h2 class="modalHeader__text">1<br>Пожаловать</h2>
+                <form class="login-form">
+					<p class="fields">
+						<label class="email-label" for="signin-email"></label>
+						<input class="" id="signin-email" type="email" placeholder="E-mail">
+						
+					</p>
+
+					<p class="fields">
+						<label class="cd-password" for="signin-password"></label>
+						<input class="" id="signin-password" type="password"  placeholder="Пароль">
+                    </p>
+					<p class="fields">
+						<input class="" type="submit" value="Войти">
+					</p>
+				</form>
+            </div>
+        </div>
+    </div> -->
+    <div class="overlay" id="overlay-modal"></div>
+<script src="js/modal.js"></script>
 </body>
 </html>
