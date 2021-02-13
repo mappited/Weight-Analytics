@@ -12,8 +12,6 @@ window.onclick = function(event) {
 		modal.style.display = "none";
 	}
 }
-
-
 document.body.addEventListener('keyup', function (event) {
     var key = event.keyCode;
 
@@ -21,3 +19,8 @@ document.body.addEventListener('keyup', function (event) {
         modal.style.display = "none";
     };
 }, false);
+
+
+
+
+
