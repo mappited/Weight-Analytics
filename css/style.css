@@ -90,15 +90,6 @@ h1,h3,h2{
     text-align: center;
     padding-top: 9px;
 }
-.mobileWelcomeText{
-  font-family: SF Pro Display;
-  font-size: 50px;
-  letter-spacing: 2px;
-  color:#111111;
-  text-align: center;
-  padding-bottom: 29px;
-  margin:0px;
-}
 .mainPng{
     width: 100%;
     overflow: hidden;

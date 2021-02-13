@@ -1,5 +1,8 @@
 @media (max-width:600px) {
   /*mobile positioning & hiding*/
+  html{
+      border-top: 0px solid black;
+  }
   .header-div{
     padding-top:0px;
   }
@@ -17,27 +20,68 @@
   .mainPng,.firstMotivateText,.secondMotivateText{
       display: none;
   }
-  .mainMobilePng{
-    display:block;
+  .mobile-logo-container{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
     width: 100%;
-    margin-top: -40px;
+    /* 26% от выс экрана*/
+    height: 26vh;
+    background-image: url("../img/mobilebanner1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .logoNameMobile{
+    font-family:SF Pro Display;
+    color: white;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: left;
   }
   .right-menu-buttons{
       display: none;
   }
+
   .logoName{
       display: none;
   }
-
   .mobileHeaderText{
       text-align: center;
       /*padding-top:19px;*/
-      padding-top:8px;
+      padding-top:19px;
       font-family:SF Pro Display;
       font-size: 45px;
       margin-bottom: 16px;
-      font-weight: 700;
+      font-weight: 400;
+  }
+  .mobileLogin{
+    display: flex;
+    flex-flow: column;
+    align-items: baseline;
+    justify-content: center;
+    height: 74vh;
+    width:85%;
+    margin:0px auto;
+  }
+  .mobile-fields{
+    width:100%;
+  }
+  .mobile-input{
+    width:100%;
+  }
+  .mobile-switch{
+    width:100%;
+  }
+  .mobile-button-scale{
+    width:100%;
+    /*чтобы не скроллилось вниз на мобиле*/
+    margin-bottom: 10px;
   }
 }
 
@@ -72,6 +116,6 @@
     display:none;
   }
   .mobileLogin{
-    display:none
+    display:none;
   }
 }
