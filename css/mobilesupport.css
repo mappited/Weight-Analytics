@@ -34,7 +34,7 @@
     background-image: url("../img/mobilebanner1.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center top;
   }
 
   .logoNameMobile{
@@ -43,6 +43,7 @@
     font-size: 3em;
     font-weight: 700;
     text-align: left;
+    text-shadow: black 2px 2px;
   }
   .right-menu-buttons{
       display: none;
@@ -109,7 +110,7 @@
     left:48px; */
     font-size: 32px;
     font-weight: 900;
-    /* position: absolute; */
+    position: absolute;
     margin-left: 40px;
 }
   .logoNameMobile{
