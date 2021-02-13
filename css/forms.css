@@ -100,11 +100,6 @@ p.registration-switch-text{
     margin-bottom: 59px;
 
 }
-
-/*уберает пробел под регистрацией для мобилы*/
-.mobile-button{
-  margin-bottom: 0px;
-}
 .registration-switch-text{
     padding-top: 5px;
     /*  */
@@ -112,6 +107,11 @@ p.registration-switch-text{
     /*  */
     font-size: 26px;
 }
+
+
+
+
+
 
 /* Styles for registration modal window */
 .label-quter-form{

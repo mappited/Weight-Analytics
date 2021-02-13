@@ -6,17 +6,18 @@ body{
     border-top-right-radius: 5px;
     margin: 0;
 }
-h1,h3{
+h1,h3,h2{
     margin: 0;
 }
+
 .header{
     position: relative;
 }
 
 .login-block{
-    position: absolute;
-    top:46px;
-    right: 320px;
+    /* position: absolute; */
+    /* top:44px;
+    right: 320px; */
     text-decoration: none;
 }
 
@@ -29,7 +30,7 @@ h1,h3{
 
 .login{
     font-family:SF Pro Display;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color:black;
 
@@ -43,31 +44,33 @@ h1,h3{
 }
 
 .registration-block{
-    position: absolute;
-    right: 50px;
-    top:38px;
+    /* position: absolute; */
+    /* right: 50px;
+    top:34px; */
     width: 213px;
     height: 50px;
     border-radius: 15px;
     border:solid #114EFF 3px;
-}
-.register{
-    position: absolute;
-    top: 7px;
-    left:41px;
-    font-family:SF Pro Display;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    color:#114EFF;
-    text-decoration: none;
+    margin-left: 50px;
+    margin-right:40px;
 }
 .registration-block:hover{
     opacity: 0.7;
     transition:1s;
     color: black;
 }
-
+.register{
+    /* position: absolute; */
+    /* top: 7px;
+    left:41px; */
+    font-family:SF Pro Display;
+    font-weight: bold;
+    font-size: 20px;
+    color:#114EFF;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 7px;
+}
 .firstMotivateText{
     font-family: Montserrat;
     font-size: 66px;
@@ -75,7 +78,7 @@ h1,h3{
     letter-spacing: 2px;
     color:#49637E;
     text-align: center;
-    padding-top: 135px;
+    padding-top: 40px;
 }
 .secondMotivateText{
     font-family: Montserrat;
@@ -85,7 +88,7 @@ h1,h3{
     color:#49637E;
     opacity: 0.76;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 9px;
 }
 .mobileWelcomeText{
   font-family: SF Pro Display;
@@ -101,7 +104,6 @@ h1,h3{
     overflow: hidden;
     padding-top:20px;
 }
-
 @media (min-height:960px){
     .mainPng{
         padding: 10px;

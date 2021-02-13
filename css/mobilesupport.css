@@ -47,19 +47,27 @@
     display:none;
   }
   .header-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     padding-top: 30px;
+    flex-wrap: wrap;
   }
   .right-menu-buttons{
-      display: flex;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
   }
   .logoName{
-      font-family:SF Pro Display;
-      top:39px;
-      left:48px;
-      font-size: 32px;
-      font-weight: 900;
-      position: absolute;
-  }
+    font-family:SF Pro Display;
+    /* top:32px;
+    left:48px; */
+    font-size: 32px;
+    font-weight: 900;
+    /* position: absolute; */
+    margin-left: 40px;
+}
   .logoNameMobile{
     display:none;
   }
