@@ -12,26 +12,27 @@ h1,h3{
 .header{
     position: relative;
 }
-.logoName{
-    font-family:SF Pro Display;
-    top:39px;
-    left:48px;
-    font-size: 32px;
-    font-weight: 900;
-    position: absolute;
-}
+
 .login-block{
     position: absolute;
     top:46px;
     right: 320px;
     text-decoration: none;
 }
+
+.login-block-mobile{
+    position: relative;
+    top:46px;
+    right: 320px;
+    text-decoration: none;
+}
+
 .login{
     font-family:SF Pro Display;
     font-size: 20px;
-    font-weight: bold; 
+    font-weight: bold;
     color:black;
-    
+
 }
 .transition{
     transition: 1s;
@@ -86,7 +87,23 @@ h1,h3{
     text-align: center;
     padding-top: 11px;
 }
+.mobileWelcomeText{
+  font-family: SF Pro Display;
+  font-size: 50px;
+  letter-spacing: 2px;
+  color:#111111;
+  text-align: center;
+  padding-bottom: 29px;
+  margin:0px;
+}
 .mainPng{
     width: 100%;
     overflow: hidden;
+    padding-top:20px;
+}
+
+@media (min-height:960px){
+    .mainPng{
+        padding: 10px;
+    }
 }

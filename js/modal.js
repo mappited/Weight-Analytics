@@ -1,20 +1,21 @@
-let  modalWin = document.getElementById('modalId'),
-	 buttonModal = document.getElementById('modalOpen');
-var span = document.getElementsByClassName('modalClose')[0];
+let  modal = document.getElementById('modalid');
+let	 button = document.getElementById('modalOpen');
+let  span = document.getElementsByClassName('modalClose')[0];
 
-buttonModal.onclick = function() {
-	modalWin.style.display = "block";
+
+button.onclick = ()=> {
+	modal.style.display = "block";
 }
-span.onclick = function()  {
-	modalWin.style.display = "none";
-}
+
 window.onclick = function(event) {
-	if (event.target == modalWin){
-		modalWin.style.display = "none";
+	if (event.target == modal){
+		modal.style.display = "none";
 	}
 }
+document.body.addEventListener('keyup', function (event) {
+    var key = event.keyCode;
 
-
-
-
-
+    if (key == 27) {
+        modal.style.display = "none";
+    };
+}, false);

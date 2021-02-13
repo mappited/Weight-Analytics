@@ -1,0 +1,69 @@
+@media (max-width:600px) {
+  /*mobile positioning & hiding*/
+  .header-div{
+    padding-top:0px;
+  }
+  .logoName{
+      color:white;
+      font-family:SF Pro Display;
+      /* top:32px;
+      left:48px; */
+      font-size: 32px;
+      font-weight: 900;
+      /* position: absolute; */
+      margin-left: 40px;
+  }
+
+  .mainPng,.firstMotivateText,.secondMotivateText{
+      display: none;
+  }
+  .mainMobilePng{
+    display:block;
+    position: relative;
+    width: 100%;
+    margin-top: -40px;
+  }
+  .right-menu-buttons{
+      display: none;
+  }
+  .logoName{
+      display: none;
+  }
+
+  .mobileHeaderText{
+      text-align: center;
+      /*padding-top:19px;*/
+      padding-top:8px;
+      font-family:SF Pro Display;
+      font-size: 45px;
+      margin-bottom: 16px;
+      font-weight: 700;
+  }
+}
+
+@media (min-width:600px) {
+  /*pc only*/
+  .mainMobilePng{
+    display:none;
+  }
+  .header-div{
+    padding-top: 30px;
+  }
+  .right-menu-buttons{
+      display: flex;
+  }
+  .logoName{
+      font-family:SF Pro Display;
+      top:39px;
+      left:48px;
+      font-size: 32px;
+      font-weight: 900;
+      position: absolute;
+  }
+  .logoNameMobile{
+    display:none;
+  }
+  .mobileLogin{
+    display:none
+  }
+}
