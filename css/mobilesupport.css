@@ -87,6 +87,13 @@
     /*чтобы не скроллилось вниз на мобиле*/
     margin-bottom: 0.8vh;
   }
+
+  .name-input-mobile{
+    margin-right:10px;
+  }
+  .surname-input-mobile{
+    margin-left:2px;
+  }
 }
 
 @media (min-width:355px) {
