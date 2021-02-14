@@ -66,10 +66,7 @@ p.registration-switch-text{
     font-size: 20px;
     color: rgb(184, 184, 184);
     margin-left: 30px;
-
-    /*чтобы не сворачивалось*/
     margin-right: 2px;
-    white-space: nowrap;
 }
 .log-in-forgotten{
     display: flex;
