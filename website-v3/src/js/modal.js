@@ -17,5 +17,5 @@ document.body.addEventListener('keyup', function (event) {
 
     if (key == 27) {
         modal.style.display = "none";
-    };
+    }
 }, false);

@@ -1,5 +1,5 @@
-html{
-    border-top: 5px solid black;
+*{
+      box-sizing: border-box;
 }
 body{
     border-top-left-radius: 5px;
@@ -8,6 +8,7 @@ body{
 }
 h1,h3,h2{
     margin: 0;
+
 }
 
 .header{
@@ -53,6 +54,10 @@ h1,h3,h2{
     border:solid #114EFF 3px;
     margin-left: 50px;
     margin-right:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 .registration-block:hover{
     opacity: 0.7;
@@ -69,7 +74,6 @@ h1,h3,h2{
     color:#114EFF;
     text-decoration: none;
     text-align: center;
-    padding-top: 7px;
 }
 .firstMotivateText{
     font-family: Montserrat;
@@ -79,6 +83,8 @@ h1,h3,h2{
     color:#49637E;
     text-align: center;
     padding-top: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .secondMotivateText{
     font-family: Montserrat;
@@ -89,6 +95,8 @@ h1,h3,h2{
     opacity: 0.76;
     text-align: center;
     padding-top: 9px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .mainPng{
     width: 100%;

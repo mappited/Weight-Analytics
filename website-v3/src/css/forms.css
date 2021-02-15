@@ -29,6 +29,12 @@ p.registration-switch-text{
     font-family:SF Pro Display;
 
 }
+
+.auth-fields{
+  margin:0 -15px;
+  margin-bottom: 18px;
+}
+
 .label-form{
     width: 302px;
     height: 52px;
@@ -37,6 +43,7 @@ p.registration-switch-text{
     border:0;
     background-color:#e4e4e4;
     padding-left: 10px;
+    font-family:SF Pro Display;
     font-weight: lighter;
 }
 .login-form-centered{
@@ -73,6 +80,7 @@ p.registration-switch-text{
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 14px
 }
 .registration-switch{
     display: flex;
@@ -85,6 +93,10 @@ p.registration-switch-text{
     border-radius: 15px;
     width: 302px;
     height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 .notation-h{
     color: #2e2e33;
@@ -106,17 +118,12 @@ p.registration-switch-text{
 
 }
 .registration-switch-text{
-    padding-top: 5px;
     /*  */
     font-weight: 400;
     /*  */
     font-size: 26px;
+    font-family:SF Pro Display;
 }
-
-
-
-
-
 
 /* Styles for registration modal window */
 .label-quter-form{
@@ -128,6 +135,7 @@ p.registration-switch-text{
     background-color:#e4e4e4;
     padding-left: 10px;
     font-weight: lighter;
+    font-family:SF Pro Display;
 }
 .surname-input{
     margin-left: 23px;
@@ -150,6 +158,6 @@ p.registration-switch-text{
     background-color: #00CC33;
     color: white;
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 59px;
 }

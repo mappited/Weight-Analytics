@@ -97,6 +97,7 @@
 }
 
 @media (min-width:355px) {
+  /*wide mobile*/
   .mobile-notification-thin{
     display:none;
   }
@@ -112,6 +113,7 @@
 }
 
 @media (max-width:355px) {
+  /*thin mobile*/
   .mobile-notification-thin{
     text-align: center;
     margin-left: -3px;
@@ -131,6 +133,9 @@
 
 
 @media (min-width:660px) {
+  html{
+      border-top: 5px solid black;
+  }
   /*pc only*/
   .mainMobilePng{
     display:none;

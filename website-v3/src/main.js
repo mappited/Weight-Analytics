@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import titleMixin from './mixins/titleMixin'
+
+const app = createApp(App)
+app.mixin(titleMixin)
+app.mount('#app')
