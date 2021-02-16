@@ -5,6 +5,7 @@ body{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin: 0;
+    line-height: normal;
 }
 h1,h3,h2{
     margin: 0;
@@ -102,9 +103,4 @@ h1,h3,h2{
     width: 100%;
     overflow: hidden;
     padding-top:20px;
-}
-@media (min-height:960px){
-    .mainPng{
-        padding: 10px;
-    }
 }
