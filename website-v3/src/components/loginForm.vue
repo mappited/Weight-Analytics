@@ -15,7 +15,7 @@
       </div>
       <div class="log-in-forgotten">
           <p :class="isMobileField" class="fields label-font -margin-not">
-              <input class="login-submit outline-off " type="submit" value="Войти">
+              <router-link to="/SecondPage"><input class="login-submit outline-off " type="submit" value="Войти"></router-link>
           </p>
           <a href="#" class="forgotten label-font">Забыли пароль?</a>
       </div>
