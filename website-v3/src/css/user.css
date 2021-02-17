@@ -1,15 +1,26 @@
 *{
   margin-left: auto;
 }
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+}
+hr:not([size]) {
+    height: 1px;
+}
 p{margin: 0;padding: 0;}
-.logoName{
+.logoName
+.signOut-div{
     top:30px;
     color:rgb(0, 0, 0);
     font-family:SF Pro Display Heavy;
     font-size: 32px;
     margin-left: 45px;
 }
-.header-div{
+.header-div-second-page{
     padding-top: 30px;
     display: flex;
     justify-content: space-between;

@@ -12,7 +12,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 @import "./css/reset.css";
 @import "./css/forms.css";
 @import "./css/mobilesupport.css";

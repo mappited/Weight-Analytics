@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-      <div class="header-div">
+      <div class="header-div-second-page">
           <div class="logoName">WeightCalendar</div>
 
 
@@ -8,7 +8,7 @@
                   <a class="menu-acc-circle menu-acc" href="#" id=""><div class="acc-circle "></div></a>
                   <!-- acc-circle создает форму круга потом можно будет вместо него впихнуть пнг
                   menu-acc за стили только в меню-баре -->
-                  <p class="signOut-div"><a class="signout-a-image" href="#" ><img src="./assets/sign_out1.png" class="signout"></a></p>
+                  <router-link to="/" class="signOut-div"><a class="signout-a-image"><img src="./assets/sign_out1.png" class="signout"></a></router-link>
           </div>
 
 
@@ -16,12 +16,7 @@
       </div>
   </header>
 
-  <div class="middle-acc-div">
-      <hr class="line-acc-circle">
-      <div class="acc-circle m-for-head-lines-circle"></div>
-      <!-- m-for-head-lines-circle   ::: marginы для центрального кружка -->
-      <hr class="line-acc-circle">
-  </div>
+  <middleAccDiv/>
 
   <div class="userName"><p class="userName-text">Райн Гослинг</p></div>
   <!-- Далее в user.css будет лежать класс со стилем для активной кнопки :: .active-switcher-style -->
@@ -43,13 +38,18 @@
   </div>
 </template>
 
+
 <script>
+import middleAccDiv from './components/middleAccDiv.vue'
+
 export default {
-  name: 'secondPage'
+  name: 'secondPage',
+  components:{
+    middleAccDiv,
+  }
 }
 </script>
 
-<style>
+<style scoped>
 @import "./css/user.css";
-
 </style>
