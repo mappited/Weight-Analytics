@@ -96,7 +96,7 @@
   }
 }
 
-@media (min-width:355px) {
+@media (min-width:356px) {
   /*wide mobile*/
   .mobile-notification-thin{
     display:none;
@@ -131,8 +131,7 @@
   }
 }
 
-
-@media (min-width:660px) {
+@media (min-width:661px) {
   html{
       border-top: 5px solid black;
   }
@@ -161,7 +160,7 @@
     font-weight: 900;
     position: absolute;
     margin-left: 40px;
-}
+  }
   .logoNameMobile{
     display:none;
   }
