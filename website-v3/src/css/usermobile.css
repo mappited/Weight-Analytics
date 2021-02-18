@@ -94,7 +94,8 @@
   .userName-text{
     font-size: 77px;
   }
-  .active-switcher-style{
+  .active-switcher-style,
+  .inactive-switcher-style{
     width: 250px;
   }
   .centered-div-inputs{
@@ -172,13 +173,14 @@ p{margin: 0;padding: 0;}
     background-color: #F2F2F2;
     border-radius: 15px;
     height: 44px;
+    outline: 1px;
 }
-/*для неактивных на потом*/ 
+/*для неактивных на потом*/
 .inactive-switcher-style{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
     border-radius: 15px;
     height: 44px;
 }
