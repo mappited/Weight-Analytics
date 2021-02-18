@@ -1,16 +1,7 @@
 *{
   margin-left: auto;
 }
-hr {
-    margin: 1rem 0;
-    color: inherit;
-    background-color: currentColor;
-    border: 0;
-    opacity: .25;
-}
-hr:not([size]) {
-    height: 1px;
-}
+
 p{margin: 0;padding: 0;}
 .logoName
 .signOut-div{

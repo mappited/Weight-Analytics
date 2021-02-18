@@ -103,4 +103,12 @@ h1,h3,h2{
     width: 100%;
     overflow: hidden;
     padding-top:20px;
+    overflow: hidden;
+}
+
+@media (max-height:960px) {
+  /*может както пофиксить сколлинг но я не уверен как*/
+  .mainPng{
+    overflow: hidden;
+  }
 }

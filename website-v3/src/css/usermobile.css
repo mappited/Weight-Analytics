@@ -1,0 +1,226 @@
+@media (max-width:660px) {
+  .middle-acc-div {
+      display: none
+  }
+  .menu-acc-circle {
+    margin-left: 20px;
+  }
+  .signOut-div {
+    margin-right: 20px;
+  }
+  .left-side-menu{
+    display: flex;
+    flex: auto;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .userName-text{
+    font-size: 40px;
+    text-align: left;
+  }
+  .active-switcher-style,
+  .inactive-switcher-style{
+    width: 43vw;
+    text-align: center;
+  }
+  .centered-div-inputs{
+      display: none;
+  }
+  .switcher{
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .userName{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 20px;
+      padding-top: 12px;
+  }
+}
+
+@media (max-width:870px) {
+  .gradient-div-text{
+    font-size: 50px;
+  }
+}
+
+@media (min-width:870px) {
+  .gradient-div-text{
+    font-size: 72px;
+  }
+}
+
+@media (max-width:380px) {
+  .active-switcher-style,
+  .inactive-switcher-style{
+    font-size: 20px;
+  }
+}
+
+@media (min-width:661px) {
+  hr {
+      margin: 1rem 0;
+      color: inherit;
+      background-color: currentColor;
+      border: 0;
+      opacity: .25;
+  }
+  hr:not([size]) {
+      height: 1px;
+  }
+
+  .middle-acc-div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 30px;
+  }
+  .signOut-div{
+      margin-right: 45px;
+  }
+  .left-side-menu{
+      display: flex;
+      float: right;
+      align-items: center;
+      margin-left: auto;
+  }
+  .userName-text{
+    font-size: 77px;
+  }
+  .active-switcher-style{
+    width: 250px;
+  }
+  .centered-div-inputs{
+      justify-content: center;
+      display: flex;
+      padding-top:85px ;
+  }
+  /* отступ друг от друга */
+  .statistics{
+      margin-left: 113px;
+  }
+  .switcher{
+    justify-content: center;
+    align-items: center;
+  }
+  .userName{
+      display: flex;
+      justify-content: center;
+      padding-top: 12px;
+  }
+}
+
+*{
+  margin-left: auto;
+}
+
+p{margin: 0;padding: 0;}
+.logoName
+.signOut-div{
+    top:30px;
+    color:rgb(0, 0, 0);
+    font-family:SF Pro Display Heavy;
+    font-size: 32px;
+
+}
+.header-div-second-page{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.left-side-menu{
+    display: flex;
+    float: right;
+    align-items: center;
+    margin-left: auto;
+}
+
+.line-acc-circle{
+    border-color: #707070;
+    width: 25%;
+    border: 1px;
+}
+
+.menu-acc{
+    margin-right: 30px;
+}
+.acc-circle{
+    width: 54px;
+    height: 54px;
+    border-radius: 54px;
+    background-color:#F23838;
+    opacity: 0.86;
+
+}
+.m-for-head-lines-circle{
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+.userName-text{
+    color: #2E2E33;
+    font-family: Montserrat;
+    font-weight: 900;
+}
+
+/* Тот самый класс  */
+/* /////////////////// */
+
+.active-switcher-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    height: 44px;
+}
+
+.inactive-switcher-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    height: 44px;
+}
+
+.switcher{
+    display: flex;
+    /* Далее шрифт */
+
+    font-family:SF Pro Display Heavy;
+    font-weight: 100;
+    font-size: 25px;
+    color: #2E2A2A;
+    opacity: 0.86;
+    margin-top: 17px;
+}
+
+.gradient-div{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: -webkit-linear-gradient(45deg, rgb(0, 34, 221) 6%, rgb(84, 243, 145) 51%, rgb(0, 34, 221) 100%);
+    background: -moz-linear-gradient(45deg, rgb(0, 34, 221) 6%, rgb(84, 243, 145) 51%, rgb(0, 34, 221) 100%);
+    background: linear-gradient(45deg, rgb(0, 34, 221) 6%, rgb(84, 243, 145) 51%, rgb(0, 34, 221) 100%);
+    width: 912px;
+    height: 285px;
+    border-radius: 15px;
+}
+.gradient-div-text{
+    font-family: Montserrat;
+    font-weight: 900;
+    line-height: 1.2;
+    color: white;
+    margin-left:41px;
+}
+.input-label-form{
+    border:2px solid #464646;
+    border-radius:15px;
+    width: 363px;
+    height: 285px;
+    padding-left: 30px;
+    font-size: 130px;
+}

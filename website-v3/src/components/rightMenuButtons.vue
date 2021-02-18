@@ -58,6 +58,18 @@ export default {
         this.appearReg = false
       }
       this.outside = true;
+    },
+    hideLoginForce(){
+      this.appearLog = false
+    },
+    hideRegForce(){
+      this.appearReg = false
+    },
+    showReg(){
+      this.appearReg = true
+    },
+    showLogin(){
+      this.appearLogin = true
     }
   }
 }

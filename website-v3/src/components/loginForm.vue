@@ -23,7 +23,7 @@
           <p href="#" v-if="!mobile" class="notation-h label-font">Если у вас нет аккаунта, тогда Вам нужно</p>
           <p href="#" v-if="mobile" class="mobile-notification-wide notation-h label-font">Если у вас нет аккаунта, тогда Вам нужно</p>
           <p href="#" v-if="mobile" class="mobile-notification-thin notation-h label-font">Если у вас нет аккаунта,<br>тогда Вам нужно</p>
-          <a v-if="!mobile" class="switch-button" href="#"><div :class="isMobileButton" class="registration-switch-div" ><p :class="isMobileButton" class="registration-switch-text">Зарегистрироваться</p></div></a>
+          <a v-if="!mobile" class="switch-button" href="#" @click="this.$parent.hideLoginForce(); this.$parent.showReg()"><div :class="isMobileButton" class="registration-switch-div" ><p :class="isMobileButton" class="registration-switch-text">Зарегистрироваться</p></div></a>
           <router-link to="/MobileReg" v-if="mobile" :class="isMobileSwitch"><a :class="isMobileSwitch" class="switch-button" href="#"><div :class="isMobileButton" class="registration-switch-div" ><p :class="isMobileButton" class="registration-switch-text">Зарегистрироваться</p></div></a></router-link>
       </div>
     </form>
