@@ -1,0 +1,114 @@
+*{
+      box-sizing: border-box;
+}
+body{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin: 0;
+    line-height: normal;
+}
+h1,h3,h2{
+    margin: 0;
+
+}
+
+.header{
+    position: relative;
+}
+
+.login-block{
+    /* position: absolute; */
+    /* top:44px;
+    right: 320px; */
+    text-decoration: none;
+}
+
+.login-block-mobile{
+    position: relative;
+    top:46px;
+    right: 320px;
+    text-decoration: none;
+}
+
+.login{
+    font-family:SF Pro Display;
+    font-size: 18px;
+    font-weight: bold;
+    color:black;
+
+}
+.transition{
+    transition: 1s;
+}
+.login-block:hover{
+    opacity: 0.7;
+    color: black;
+}
+
+.registration-block{
+    /* position: absolute; */
+    /* right: 50px;
+    top:34px; */
+    width: 213px;
+    height: 50px;
+    border-radius: 15px;
+    border:solid #114EFF 3px;
+    margin-left: 50px;
+    margin-right:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.registration-block:hover{
+    opacity: 0.7;
+    transition:1s;
+    color: black;
+}
+.register{
+    /* position: absolute; */
+    /* top: 7px;
+    left:41px; */
+    font-family:SF Pro Display;
+    font-weight: bold;
+    font-size: 20px;
+    color:#114EFF;
+    text-decoration: none;
+    text-align: center;
+}
+.firstMotivateText{
+    font-family: Montserrat;
+    font-size: 66px;
+    font-size: 900;
+    letter-spacing: 2px;
+    color:#49637E;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.secondMotivateText{
+    font-family: Montserrat;
+    font-size: 21px;
+    font-size: 900;
+
+    color:#49637E;
+    opacity: 0.76;
+    text-align: center;
+    padding-top: 9px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.mainPng{
+    width: 100%;
+    overflow: hidden;
+    padding-top:20px;
+    overflow: hidden;
+}
+
+@media (max-height:960px) {
+  /*может както пофиксить сколлинг но я не уверен как*/
+  .mainPng{
+    overflow: hidden;
+  }
+}

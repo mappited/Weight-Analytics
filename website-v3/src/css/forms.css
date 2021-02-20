@@ -1,0 +1,177 @@
+/* Reset input styles */
+.outline-off{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+a.forgotten:hover{
+    color:rgb(10, 151, 10);
+    opacity: 0.5;
+}
+a.switch-button:hover{
+    color: white;
+}
+p.registration-switch-text{
+    margin: 0;
+}
+.login-submit{
+    margin:0;
+    padding: 0;
+}
+/* end */
+.m-b-forms{
+    margin-bottom: 18px;
+    /*выравнивает ввод по центру для мобильных устройств*/
+    display: flex;
+}
+.label-font{
+    font-family:SF Pro Display;
+
+}
+
+.auth-fields{
+  margin:0 -15px;
+  margin-bottom: 18px;
+}
+
+.label-form{
+    width: 302px;
+    height: 52px;
+    font-size:20px;
+    border-radius: 15px;
+    border:0;
+    background-color:#e4e4e4;
+    padding-left: 10px;
+    font-family:SF Pro Display;
+    font-weight: lighter;
+}
+.login-form-centered{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+.login-submit{
+    color: white;
+    background-color: black;
+    font-size: 30px;
+    width: 123px;
+    height: 52px;
+    border-radius: 15px;
+    box-shadow: none;
+    border:0;
+    /*  */
+    font-weight: 400;
+    /*  */
+}
+.-margin-not{
+    margin-bottom: 5px;
+}
+.forgotten{
+    font-size: 20px;
+    color: rgb(184, 184, 184);
+    margin-left: 30px;
+    margin-right: 2px;
+}
+.log-in-forgotten{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 14px
+}
+.registration-switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.registration-switch-div{
+    background-color: #00CC33;
+    border-radius: 15px;
+    width: 302px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.notation-h{
+    color: #2e2e33;
+    opacity: 0.51;
+    font-size: 16px;
+    margin-bottom: 5px;
+    /* ПОМЕНЯТЬ РАССТОЯНИЕ МЕЖДУ СЛОВАМИ! */
+    letter-spacing: .1px;
+
+    /*чтобы не переносилось*/
+    white-space: nowrap;
+}
+.switch-button{
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    margin-bottom: 59px;
+
+}
+.registration-switch-text{
+    /*  */
+    font-weight: 400;
+    /*  */
+    font-size: 26px;
+    font-family:SF Pro Display;
+}
+
+/* Styles for registration modal window */
+.label-quter-form{
+    height: 52px;
+    width:139px;
+    font-size:20px;
+    border-radius: 15px;
+    border:0;
+    background-color:#e4e4e4;
+    padding-left: 10px;
+    font-weight: lighter;
+    font-family:SF Pro Display;
+}
+.surname-input{
+    margin-left: 23px;
+
+}
+.name-surname-quter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Reg-column-forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.registration-submit{
+    background-color: #00CC33;
+    color: white;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 59px;
+    margin-left:0px;
+
+    width: 302px;
+    height: 52px;
+    border-radius: 15px;
+    border:0;
+    font-family:SF Pro Display;
+
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding-top: 0px;
+    margin-top: 0px;
+}
