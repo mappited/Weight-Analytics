@@ -1,49 +1,49 @@
 let express = require('express');
 let router = express.Router();
-let FirebaseProvider = require("../app_modules/firebase");
+// let FirebaseProvider = require("../app_modules/firebase");
 
-FirebaseProvoder.connectToEmulator();
+// FirebaseProvoder.connectToEmulator();
 
-class Connectable {
-  _firebaseDB
-  consturctor(
-    db = FirebaseProvider.connectToEmulator()
-  ) {
-    this._firebaseDB = db;
-  }
-}
+// class Connectable {
+//   _firebaseDB
+//   consturctor(
+//     db = FirebaseProvider.connectToEmulator()
+//   ) {
+//     this._firebaseDB = db;
+//   }
+// }
 
-class Account extends Connectable {
-  _name;
-  _email;
-  constructor({ name, email, db }) {
-    super(db);
-    this._name = name;
-    this._email = email;
-  }
-}
+// class Account extends Connectable {
+//   _name;
+//   _email;
+//   constructor({ name, email, db }) {
+//     super(db);
+//     this._name = name;
+//     this._email = email;
+//   }
+// }
 
-class Session extends Connectable {
-  _request;
-  _response;
-  constructor({ request, response, db }) {
-    super(db);
-    this._request = request;
-    this._response = response;
-  }
+// class Session extends Connectable {
+//   _request;
+//   _response;
+//   constructor({ request, response, db }) {
+//     super(db);
+//     this._request = request;
+//     this._response = response;
+//   }
 
-  async check() {
+//   async check() {
 
-  }
+//   }
 
-  async create() {
+//   async create() {
 
-  }
+//   }
 
-  async delete() {
+//   async delete() {
 
-  }
-}
+//   }
+// }
 
 
 

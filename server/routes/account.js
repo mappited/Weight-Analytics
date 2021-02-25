@@ -6,7 +6,7 @@ const crypto = require('crypto');
 
 class Account {
 
-  static get PASSWOR_LENGHT() {
+  static get PASSWORD_LENGHT() {
     return 6;
   }
 
@@ -21,7 +21,7 @@ class Account {
 
   get isValid() {
     return /^[a-z]+@[a-z]+.[a-z]+$/i.test(this.email) &&
-      this.password.length >= Account.PASSWOR_LENGHT;
+      this.password.length >= Account.PASSWORD_LENGHT;
   }
 
   async makeData() {
@@ -53,10 +53,10 @@ router.post("/sign-up", async (req, res, nex) => {
   const accountData = new Account(req.body);
   try {
     const data = await accountData.makeData();
-    res.json({ststus: "success", data });
+    res.json({status: "success", data });
   } catch(error) {
     res.status(400);
-    res.json({ ststus: "failure", error: error.message });
+    res.json({status: "failure", error: error.message });
   }
 });
 
@@ -64,10 +64,10 @@ router.post("/sign-in", async (req, res, nex) => {
   const accountData = new Account(req.body);
   try {
     const data = await accountData.makeData();
-    res.json({ststus: "success", data });
+    res.json({status: "success", data });
   } catch(error) {
     res.status(400);
-    res.json({ ststus: "failure", error: error.message });
+    res.json({status: "failure", error: error.message });
   }
 });
 
