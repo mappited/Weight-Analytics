@@ -1,22 +1,59 @@
+<template>
+  <v-chart class="chart" :option="option" />
+</template>
+
 <script>
-import { defineComponent } from 'vue'
-import { Bar } from 'vue3-chart-v2'
+import { use } from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
+import { LineChart } from "echarts/charts";
+import {
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  GridComponent
+} from "echarts/components";
+import VChart, { THEME_KEY } from "vue-echarts";
+import { ref, defineComponent } from "vue";
+
+use([
+  CanvasRenderer,
+  LineChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+  GridComponent
+]);
 
 export default defineComponent({
-  name: 'MonthlyChart',
-  extends: Bar,
-  props: {
-    chartData: {
-      type: Object,
-      required: true
-    },
-    chartOptions: {
-      type: Object,
-      required: false
-    },
+  name: "demoChart",
+  components: {
+    VChart
   },
-  mounted () {
-    this.renderChart(this.chartData, this.chartOptions)
+  provide: {
+    [THEME_KEY]: "light"
+  },
+  setup: () => {
+    const option = ref({
+      xAxis: {
+        type: "category",
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [{
+          data: [150, 230, 224, 218, 135, 147, 260],
+          type: 'line'
+      }]
+    });
+
+    return { option };
   }
-})
+});
 </script>
+
+<style scoped>
+.chart {
+  height: 400px;
+}
+</style>

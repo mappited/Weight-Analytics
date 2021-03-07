@@ -36,16 +36,20 @@
           </form>
       </div>
   </div>
+
+  <demoChart/>
 </template>
 
 
 <script>
 import middleAccDiv from './components/middleAccDiv.vue'
+import demoChart from './charts/demochart.vue'
 
 export default {
   name: 'secondPage',
   components:{
     middleAccDiv,
+    demoChart
   }
 }
 </script>
