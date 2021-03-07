@@ -1,4 +1,4 @@
-@media (max-width:730px) {
+@media (max-width:660px) {
   /*другие отступы под мобилу*/
   .middle-acc-div {
       display: none
@@ -41,14 +41,14 @@
   }
 }
 
-@media (max-width:980px) {
+@media (max-width:870px) {
   /*чтобы текст не наезжал никуда при узком экране*/
   .gradient-div-text{
     font-size: 50px;
   }
 }
 
-@media (min-width:981px) {
+@media (min-width:871px) {
   /*дефолт*/
   .gradient-div-text{
     font-size: 72px;
@@ -63,7 +63,7 @@
   }
 }
 
-@media (min-width:731px) {
+@media (min-width:661px) {
   /*разделительная линия имеет стиль только в 16 на 9 режиме*/
   hr {
       margin: 1rem 0;
@@ -102,8 +102,6 @@
       justify-content: center;
       display: flex;
       padding-top:85px ;
-      margin-left: 40px;
-      margin-right: 40px;
   }
   /* отступ друг от друга */
   .statistics{
@@ -224,5 +222,4 @@ p{margin: 0;padding: 0;}
     height: 285px;
     padding-left: 30px;
     font-size: 130px;
-    margin-left: 41px
 }

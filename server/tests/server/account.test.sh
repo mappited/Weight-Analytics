@@ -1,1 +1,0 @@
- curl -H "Content-Type: application/json" -d '{"email": "test@test.com", "password": "value2"}' --insecur -X POST  https://127.0.0.1:3000/account/sign-up
