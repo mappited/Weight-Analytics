@@ -43,7 +43,18 @@ export default defineComponent({
       },
       series: [{
           data: [150, 230, 224, 218, 135, 147, 260],
-          type: 'line'
+          type: 'line',
+          smooth: true,
+          lineStyle: {
+            color: '#54F391',
+            width: 5,
+            shadowColor: 'rgba(33, 208, 53, 0.82)',
+            shadowBlur: 10,
+            shadowOffsetY: 4
+          },
+          itemStyle: {
+            opacity:0,
+          }
       }]
     });
 
