@@ -1,4 +1,4 @@
-@media (max-width:730px) {
+@media (max-width:660px) {
   /*mobile positioning & hiding*/
   html{
       border-top: 0px solid black;
@@ -131,7 +131,7 @@
   }
 }
 
-@media (min-width:731px) {
+@media (min-width:661px) {
   html{
       border-top: 5px solid black;
   }
