@@ -20,36 +20,34 @@
 
   <div class="userName"><p class="userName-text-mobile userName-text">Райн Гослинг</p></div>
   <!-- Далее в user.css будет лежать класс со стилем для активной кнопки :: .active-switcher-style -->
-  <div class="switcher">
-      <div class="input-weight-statistic"><div class="active-switcher-style"><p class="input-weight-text">Ввести данные</p></div></div>  <!-- пока для наглядности стиль тут есть -->
-      <!-- роуты сюда докрутить :)) -->
-      <div class="statistics"><div class="inactive-switcher-style"><p class="statistics-text">Статистика</p></div></div>
-      <!-- и сюда тоже -->
+
+
+  <div class="chart-flexbox">
+    <div class="add-weight-button-container"> <div class="add-weight-button" @click="showWeight()">+ Добавить Вес</div> </div>
+    <div class="chart-container"><demoChart class="weight-chart" /></div>
   </div>
 
-  <div class="centered-div-inputs">
-      <div class="gradient-div">
-          <p class="gradient-div-text">Введите<br>свой вес<br>за сегодня!</p>
-          <form action="" class="input-weight-form">
-              <label class="input-label" for="weight-label"></label>
-              <input class="input-label-form outline-off" id="weight-label">
-          </form>
-      </div>
-  </div>
+  <modalWeight ref="mWeight"/>
 
-  <demoChart/>
 </template>
 
 
 <script>
 import middleAccDiv from './components/middleAccDiv.vue'
 import demoChart from './charts/demochart.vue'
+import modalWeight from './components/modalWeight.vue'
 
 export default {
   name: 'secondPage',
   components:{
     middleAccDiv,
-    demoChart
+    demoChart,
+    modalWeight
+  },
+  methods:{
+    showWeight(){
+      this.$refs.mWeight.showWeight();
+    }
   }
 }
 </script>

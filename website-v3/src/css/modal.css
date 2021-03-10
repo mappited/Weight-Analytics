@@ -40,6 +40,16 @@
     border-radius: 15px;
 }
 
+.modalWin-enter-weight {
+    padding-top: 200px;
+    display: block;
+}
+
+.modalWindow-enter-weight {
+    width: 798px;
+    height: 428px;
+}
+
 
 
 @-webkit-keyframes animatetop {
