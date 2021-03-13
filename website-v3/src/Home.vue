@@ -38,8 +38,17 @@ export default {
     mobileLogin,
     rightMenuButtons
   },
-  title: 'WeightCalendar'
+  title: 'WeightCalendar',
+  methods: {
+    count () {
+      return this.$store.state.tok
+    }
+  },
+  mounted(){
+    console.log(this.count());
+  }
 }
+
 </script>
 
 

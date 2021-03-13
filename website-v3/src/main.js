@@ -30,7 +30,12 @@ const router = createRouter({
 const store = createStore({
   state () {
     return {
-      count: 1
+      tok: 1
+    }
+  },
+  mutations:{
+    set (state, payload) {
+      state.tok = payload
     }
   }
 })
