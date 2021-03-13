@@ -3,10 +3,15 @@
         <div class="modalWindow-enter-weight modalWindow" @click="outside = false">
 
           <div class="modalHeader">
-              <h2 class="modalHeader__text">Итак...<br>Ваш вес за сегодня?</h2>
+              <h2 class="modalHeader__text">Итак...<br>Ваш вес на сегодня?</h2>
           </div>
           <div class="modalBody">
-
+              <form action="URL(который обрабатывает отправку формы)" name="weight-submit" method="POST">
+                <div class="weight-submit-div" style="display:flex; padding-bottom:20px">
+                  <input type="text" placeholder="45.6" class="weight-input-text">
+                  <input type="submit" value="Готово" class="weight-input-submit-button">
+                </div>
+              </form>
           </div>
         </div>
   </div>
