@@ -1,5 +1,5 @@
 <template>
-  <v-chart autoresize class="chart" :option="option"  />
+  <v-chart class="chart" :option="option" autoresize />
 </template>
 
 <script>
@@ -44,7 +44,7 @@ export default defineComponent({
       series: [{
           data: [9, 10, 30, 19, 18, 16, 15],
           type: 'line',
-
+         
           lineStyle: {
             color: '#54F391',
             width: 3,
@@ -66,6 +66,6 @@ export default defineComponent({
 
 <style scoped>
 .chart {
-  height: 400px
+  height: 400px;
 }
 </style>

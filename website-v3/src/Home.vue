@@ -8,7 +8,7 @@
          user-scalable=0' >
     </head>
 
-    <body style="overflow-y: hidden">
+    <body>
 
         <header class="header">
             <div class="header-div">
@@ -20,15 +20,12 @@
         </header>
         <h1 class="firstMotivateText">Отслеживайте свой вес!</h1>
         <h2 class="secondMotivateText">Соблюдаете диету или занимаетесь спортом? WeightCalendar идеально подойдет для вас!</h2>
-
+        <img src="./img/sketchpng.png" class="mainPng">
 
         <div class="overlay" id="overlay-modal"></div>
         <mobileLogin/>
 
     </body>
-    <footer>
-      <img src="./img/sketchpng.png" class="mainPng">
-    </footer>
 </template>
 
 <script>
