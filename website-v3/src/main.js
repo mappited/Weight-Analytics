@@ -6,7 +6,7 @@ import titleMixin from './mixins/titleMixin'
 
 import Home from './Home.vue'
 import MobileReg from './MobileReg.vue'
-import SecondPage from './SecondPage.vue'
+import Profile from './Profile.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -16,7 +16,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   { path: '/', component: Home },
   { path: '/MobileReg', component: MobileReg },
-  { path: '/SecondPage', component: SecondPage },
+  { path: '/Profile', component: Profile },
 ]
 
 // 3. Create the router instance and pass the `routes` option
