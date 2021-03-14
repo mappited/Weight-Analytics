@@ -1,0 +1,75 @@
+/* .modalWin.active,
+.overlay.active{
+   display: block;
+}
+
+.modalWin {
+    display: block;
+    position: fixed;
+    z-index: 20;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.493);
+}
+
+.modalWindow {
+    position: relative;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 0;
+    width: 395px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 15px;
+}
+
+
+.modalWindow-forgotten-password{
+    text-align: center;
+    width: 545px;
+    height: 185px;
+}
+.modalHeader__text-input-weight-form{
+    font-family: SF Pro Display;
+    font-size: 25px;
+    padding-top: 21px;
+    
+}
+.modalBody-forgot-password{
+    margin-top: 18px;
+    color: #2E2E33;
+    font-size: 20px;
+} */
+
+
+
+body{
+    margin: 0;
+}
+/* ///////////////////////////////////////// */
+
+.notfound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.errorNumber{
+    font-size: 178px;
+    color: #F35454;
+    font-family: SF Pro Display;
+    padding-right: 136px;
+}
+.errorMessage{
+    text-align: center;
+    font-size: 70px;
+    color: black;
+    font-family: SF Pro Display;
+}
