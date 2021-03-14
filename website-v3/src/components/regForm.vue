@@ -1,5 +1,5 @@
 <template>
-  <form action="" class="registrationForm" method="POST">
+  <form name="registration-form-name" action="#" class="registrationForm" method="POST">
       <!-- <div class="name-surname-quter">
           <p :class="isMobileField" class="fields m-b-forms">
               <label class="name-label" for="signup-name"></label>
@@ -13,12 +13,12 @@
       <div class="Reg-column-forms">
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
               <label class="email-label" for="signin-email"></label>
-              <input :class="isMobileInput" class="email-input label-form outline-off" id="signin-email" type="email" placeholder="Почта">
+              <input :class="isMobileInput" class="email-input label-form outline-off" id="signin-email" type="email" name="email" placeholder="Почта">
 
           </p>
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
               <label class="password-label " for="signin-password"></label>
-              <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Пароль">
+              <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" name="password" placeholder="Пароль">
           </p>
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
               <label class="password-label " for="signin-password"></label>

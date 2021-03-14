@@ -42,7 +42,7 @@ export default defineComponent({
           type: 'value'
       },
       series: [{
-          data: [50, 51, 50.5, 52, 52.5, 50, 49],
+          data: [9, 10, 30, 19, 18, 16, 15],
           type: 'line',
          
           lineStyle: {
