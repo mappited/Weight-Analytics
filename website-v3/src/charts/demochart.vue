@@ -40,10 +40,10 @@ export default defineComponent({
       },
       yAxis: {
           type: 'value',
-          min: 30,
+          min: 20,
       },
       series: [{
-          data: [9, 10, 30, 19, 18, 16, 15],
+          data: [20, 23, 23.3, 24.5, 26, 23, 20],
           type: 'line',
 
           lineStyle: {

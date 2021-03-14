@@ -234,6 +234,40 @@ p{margin: 0;padding: 0;}
     align-self: flex-start;
     margin-left: 28px
 }
+.flex-container-name-n-choseDate{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.switchDate-button{
+  width: 143px;
+  height: 25px;
+  border-radius: 15px;
+  border:solid #F35454 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  font-family:SF Pro Display;
+  font-weight: bold;
+  font-size: 15 px;
+  background-color: #F35454;
+  color:white;
+}
+
+.switchDate-button:hover{
+  opacity: 0.8;
+  transition:1s;
+  color: white;
+}
+.switchDate-button-container{
+  margin-top: 20px;
+  margin-right:28px;
+}
+
 
 /* Тот самый класс  */
 /* /////////////////// */

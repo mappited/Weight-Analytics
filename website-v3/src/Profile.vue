@@ -26,7 +26,10 @@
     <div class="add-weight-button-container"> <div class="add-weight-button" @click="showWeight()" style="cursor:pointer">+ Добавить Вес</div> </div>
 
     <div class="chart-container">
-      <div class="chart-name">График изменения веса</div>
+      <div class="flex-container-name-n-choseDate">
+        <div class="chart-name">График изменения веса</div>
+        <div class="switchDate-button-container left-margin-container-chart"><div class="switchDate-button" @click="showDataSwitch()" style="cursor:pointer">Выбрать дату</div></div>
+      </div>
       <demoChart/>
     </div>
 
