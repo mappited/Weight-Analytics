@@ -17,7 +17,7 @@
           <p :class="isMobileField" class="fields label-font -margin-not">
               <router-link to="/Profile"><input class="login-submit outline-off " type="submit" value="Войти"></router-link>
           </p>
-          <a href="#" class="forgotten label-font">Забыли пароль?</a>
+          <a href="#" class="forgotten label-font" @click="showfpass()">Забыли пароль?</a>
       </div>
       <div :class="isMobileSwitch" class="registration-switch">
           <p href="#" v-if="!mobile" class="notation-h label-font">Если у вас нет аккаунта, тогда Вам нужно</p>
@@ -27,11 +27,22 @@
           <router-link to="/MobileReg" v-if="mobile" :class="isMobileSwitch"><a :class="isMobileSwitch" class="switch-button" href="#"><div :class="isMobileButton" class="registration-switch-div" ><p :class="isMobileButton" class="registration-switch-text">Зарегистрироваться</p></div></a></router-link>
       </div>
     </form>
+    <forgotPassword ref="fpass"/>
 </template>
 
 <script>
+import forgotPassword from './forgotPassword.vue'
+
 export default {
   name: 'loginForm',
+  methods:{
+    showfpass(){
+      this.$refs.fpass.showPasswMod();
+    }
+  },
+  components:{
+    forgotPassword
+  },
   props:{
     mobile: Boolean
   },
