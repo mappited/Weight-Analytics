@@ -45,11 +45,6 @@
     display: block;
 }
 
-.modalWindow-enter-weight {
-    width: 798px;
-    height: 428px;
-}
-
 
 
 @-webkit-keyframes animatetop {
@@ -71,15 +66,6 @@
     font-weight: 700;
     color:#2E2E33;
     
-}
-.modalHeader__text-input-weight-form{
-    padding-top:26px;
-    font-family:SF Pro Display;
-    font-size: 60px;
-    margin-bottom: 24px;
-    font-weight: 700;
-    color:#5A5757;
-    padding-left: 26px;
 }
 
 
@@ -150,28 +136,114 @@
 /* Стилизация inputов */
 /*      ///////////////////////////////////       */
 
-.weight-input-text{
-    margin-left: 24px;
-    width: 492px;
-    height: 208px;
-    background-color: #F2F2F2;
-    border: 0px;
-    border-radius: 15px;
-    font-family: SF Pro Display heavy;
-    font-size: 137px;
-    outline:none;
-    color: #5A5757;
-    padding-left: 14px;
+
+@media (max-width:850px) {
+
+  .weight-submit-div{
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .modalWindow-enter-weight {
+      max-width: 400px;
+      width: 90%;
+
+  }
+
+  .weight-input-text{
+      margin-left: 24px;
+      max-width: 180px;
+      width: 40vw;
+      height: 104px;
+      background-color: #F2F2F2;
+      border: 0px;
+      border-radius: 15px;
+      font-family: SF Pro Display;
+      font-weight: 500;
+      font-size: 50px;
+      outline:none;
+      color: #5A5757;
+      padding-left: 14px;
+  }
+
+  .modalHeader__text-input-weight-form{
+      padding-top:26px;
+      font-family:SF Pro Display;
+      font-size: 30px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      color:#5A5757;
+      padding-left: 26px;
+  }
+
+  .weight-input-submit-button{
+      width: 237px;
+      max-width: 237px;
+      width: 35vw;
+      height: 104px;
+      background-color: #00CC33;
+      border: 0px;
+      border-radius: 15px;
+      font-family: SF Pro Display;
+      font-size: 50px;
+      outline:none;
+      color: white;
+      margin-left: 15px;
+      margin-right: 24px;
+  }
+
 }
-.weight-input-submit-button{
-    width: 237px;
-    height: 208px;
-    background-color: #00CC33;
-    border: 0px;
-    border-radius: 15px;
-    font-family: SF Pro Display heavy;
-    font-size: 50px;
-    outline:none;
-    color: white;
-    margin-left: 25px;
+
+@media (max-width:501px) {
+  .weight-input-text{
+      font-size: 10vw;
+  }
+  .weight-input-submit-button{
+      font-size: 10vw;
+  }
+}
+
+@media (min-width:851px) {
+  .modalWindow-enter-weight {
+      width: 798px;
+      height: 428px;
+  }
+
+  .weight-input-text{
+      margin-left: 24px;
+      width: 492px;
+      height: 208px;
+      background-color: #F2F2F2;
+      border: 0px;
+      border-radius: 15px;
+      font-family: SF Pro Display;
+      font-weight: 500;
+      font-size: 137px;
+      outline:none;
+      color: #5A5757;
+      padding-left: 14px;
+  }
+
+  .modalHeader__text-input-weight-form{
+      padding-top:26px;
+      font-family:SF Pro Display;
+      font-size: 60px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      color:#5A5757;
+      padding-left: 26px;
+  }
+
+  .weight-input-submit-button{
+      width: 237px;
+      height: 208px;
+      background-color: #00CC33;
+      border: 0px;
+      border-radius: 15px;
+      font-family: SF Pro Display;
+      font-size: 50px;
+      outline:none;
+      color: white;
+      margin-left: 25px;
+  }
 }

@@ -46,6 +46,7 @@
   .chart-flexbox{
     margin-left: 20px;
     margin-right: 20px;
+    max-width: calc(100vw - 40px)
   }
 
   .chart-container{
@@ -110,11 +111,13 @@
   }
   .add-weight-button-container{
     width: 80%;
+    max-width: 890px;
   }
 
   .chart-container{
       color:white;
       width: 80%;
+      max-width: 890px;
   }
 }
 
@@ -167,7 +170,7 @@ p{margin: 0;padding: 0;}
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 
     color:white;
 }
@@ -219,6 +222,17 @@ p{margin: 0;padding: 0;}
     color: #2E2E33;
     font-family: Montserrat;
     font-weight: 900;
+}
+
+.chart-name{
+    color: #2E2E33;
+    font-size: 23px;
+    color: #4D6883;
+    font-family: Montserrat;
+    font-weight: 900;
+    margin-top: 20px;
+    align-self: flex-start;
+    margin-left: 28px
 }
 
 /* Тот самый класс  */

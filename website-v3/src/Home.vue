@@ -26,6 +26,10 @@
         <mobileLogin/>
 
     </body>
+    <footer>
+      <img src="./img/sketchpngc.png" class="mainPng">
+    </footer>
+
 </template>
 
 <script>
