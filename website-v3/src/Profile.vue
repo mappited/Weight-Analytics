@@ -24,7 +24,10 @@
 
   <div class="chart-flexbox">
     <div class="add-weight-button-container"> <div class="add-weight-button" @click="showWeight()">+ Добавить Вес</div> </div>
-    <div class="chart-container"><demoChart/></div>
+    <div class="chart-container">
+      <div class="chart-name">График изменения веса</div>
+      <demoChart/>
+    </div>
   </div>
 
   <modalWeight ref="mWeight"/>

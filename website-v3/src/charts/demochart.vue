@@ -39,7 +39,8 @@ export default defineComponent({
         data: ['14.03.2021', '15.03.2021', '16.03.2021', '17.03.2021', '18.03.2021', '19.03.2021', '20.03.2021']
       },
       yAxis: {
-          type: 'value'
+          type: 'value',
+          min: 30,
       },
       series: [{
           data: [50, 51, 50.5, 52, 52.5, 50, 49],
@@ -56,7 +57,13 @@ export default defineComponent({
             opacity:1,
             color:"red",
           }
-      }]
+      }],
+      grid: {
+        left: 50,
+        top: 60,
+        right: 50,
+        bottom: 50
+      }
     });
 
     return { option };
@@ -65,7 +72,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.chart {
-  height: 400px
+@media (min-width:731px){
+  .chart {
+    height: 350px
+  }
+}
+
+@media (max-width:730px){
+  .chart {
+    height: 233px
+  }
 }
 </style>

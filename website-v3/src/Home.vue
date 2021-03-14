@@ -27,7 +27,7 @@
 
     </body>
     <footer>
-      <img src="./img/sketchpng.png" class="mainPng">
+      <img src="./img/sketchpngc.png" class="mainPng">
     </footer>
 </template>
 
