@@ -1,6 +1,6 @@
 <template>
-  <form action="" class="registrationForm">
-      <div class="name-surname-quter">
+  <form action="" class="registrationForm" method="POST">
+      <!-- <div class="name-surname-quter">
           <p :class="isMobileField" class="fields m-b-forms">
               <label class="name-label" for="signup-name"></label>
               <input :class="isMobileInput" class="name-input regForm-fonts label-quter-form outline-off" id="signup-name" type="text" placeholder="Имя">
@@ -9,7 +9,7 @@
               <label class="surname-label" for="signup-surname"></label>
               <input :class="isMobileInput" class="surname-input regForm-fonts label-quter-form outline-off" id="signup-surname" type="text" placeholder="Фамилия">
           </p>
-      </div>
+      </div> -->
       <div class="Reg-column-forms">
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
               <label class="email-label" for="signin-email"></label>
@@ -25,7 +25,7 @@
               <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Повторите пароль">
           </p>
 
-          <router-link to="/" @click="this.$parent.hideRegForce();this.$parent.showLogin()" :class="isMobileButton" class="registration-submit outline-off" type="submit" value="Зарегистрироваться">Зарегистрироваться</router-link>
+          <router-link to="/" @click="this.$parent.hideRegForce();this.$parent.showLogin()" :class="isMobileButton" class="registration-submit outline-off reg-form-submit-p" type="submit" value="Зарегистрироваться">Зарегистрироваться</router-link>
       </div>
   </form>
 </template>
