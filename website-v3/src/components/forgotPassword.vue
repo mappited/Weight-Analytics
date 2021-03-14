@@ -3,7 +3,7 @@
       <div class="modalWindow-forgotten-password modalWindow" @click="outside = false">
 
         <div class="modalHeader">
-            <h2 class="modalHeader__text-input-weight-form">Забыли пароль?</h2>
+            <h2 class="modalHeader__text-forgot-password">Забыли пароль?</h2>
         </div>
         <div class="modalBody">
             <h3 class="modalBody-forgot-password">Обратитесь к системному администратору</h3>

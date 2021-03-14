@@ -253,13 +253,15 @@
 .modalWindow-forgotten-password{
     text-align: center;
     max-width: 545px;
-    width: 80%;
+    width: 100%;
     height: 185px;
+    font-weight: 700;
 }
-.modalHeader__text-input-weight-form{
+.modalHeader__text-forgot-password{
     font-family: SF Pro Display;
     font-size: 25px;
     padding-top: 21px;
+    margin-bottom: 22px;
 
 }
 .modalBody-forgot-password{
@@ -268,4 +270,5 @@
     color: #2E2E33;
     font-size: 20px;
     margin: 10px;
+    letter-spacing: .6px;
 }
