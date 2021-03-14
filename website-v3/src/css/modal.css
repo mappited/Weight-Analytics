@@ -63,6 +63,16 @@
 }
 
 .modalHeader__text{
+    text-align: center;
+    padding-top:59px;
+    font-family:SF Pro Display;
+    font-size: 45px;
+    margin-bottom: 35px;
+    font-weight: 700;
+    color:#2E2E33;
+    
+}
+.modalHeader__text-input-weight-form{
     padding-top:26px;
     font-family:SF Pro Display;
     font-size: 60px;
@@ -131,7 +141,8 @@
     font-family:SF Pro Display;
     font-size: 45px;
     margin-bottom: 29px;
-    font-weight: 400;
+    font-weight: 700;
+    padding-right: 7px;
 }
 
 

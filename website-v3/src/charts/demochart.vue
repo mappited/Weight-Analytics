@@ -36,24 +36,25 @@ export default defineComponent({
     const option = ref({
       xAxis: {
         type: "category",
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        data: ['14.03.2021', '15.03.2021', '16.03.2021', '17.03.2021', '18.03.2021', '19.03.2021', '20.03.2021']
       },
       yAxis: {
           type: 'value'
       },
       series: [{
-          data: [150, 230, 224, 218, 135, 147, 260],
+          data: [50, 51, 50.5, 52, 52.5, 50, 49],
           type: 'line',
-          smooth: true,
+         
           lineStyle: {
             color: '#54F391',
-            width: 5,
+            width: 3,
             shadowColor: 'rgba(33, 208, 53, 0.82)',
             shadowBlur: 10,
             shadowOffsetY: 4
           },
           itemStyle: {
-            opacity:0,
+            opacity:1,
+            color:"red",
           }
       }]
     });
