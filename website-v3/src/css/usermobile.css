@@ -159,6 +159,7 @@ p{margin: 0;padding: 0;}
     align-items: center;
     flex-direction: column;
     padding-top: 40px;
+    width: 100%;
 }
 
 .chart-container{
@@ -170,10 +171,6 @@ p{margin: 0;padding: 0;}
     flex-direction: row;
 
     color:white;
-}
-
-.weight-chart{
-  width:100%
 }
 
 .add-weight-button-container{
