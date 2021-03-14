@@ -38,6 +38,9 @@ export default {
     showWeight(){
       this.appearWeight = true
     }
+  },
+  mounted(){
+    this.$forceUpdate();
   }
 }
 </script>
