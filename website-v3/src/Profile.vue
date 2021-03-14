@@ -36,6 +36,7 @@
   </div>
 
   <modalWeight ref="mWeight"/>
+  <modalDate ref="mDate"/>
 
 </template>
 
@@ -44,17 +45,22 @@
 import middleAccDiv from './components/middleAccDiv.vue'
 import demoChart from './charts/demochart.vue'
 import modalWeight from './components/modalWeight.vue'
+import modalDate from './components/modalDate.vue'
 
 export default {
   name: 'secondPage',
   components:{
     middleAccDiv,
     demoChart,
-    modalWeight
+    modalWeight,
+    modalDate
   },
   methods:{
     showWeight(){
       this.$refs.mWeight.showWeight();
+    },
+    showDataSwitch(){
+      this.$refs.mDate.showDate()
     }
   }
 }
