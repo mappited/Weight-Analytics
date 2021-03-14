@@ -263,7 +263,9 @@
 
 }
 .modalBody-forgot-password{
+    font-family: SF Pro Display;
     margin-top: 18px;
     color: #2E2E33;
     font-size: 20px;
+    margin: 10px;
 }
