@@ -1,5 +1,5 @@
 <template>
-  <v-chart autoresize class="chart" :option="option"  />
+  <v-chart class="chart" :option="option" autoresize />
 </template>
 
 <script>
@@ -36,16 +36,16 @@ export default defineComponent({
     const option = ref({
       xAxis: {
         type: "category",
-        data: ['14.03.2021', '15.03.2021', '16.03.2021', '17.03.2021', '18.03.2021', '19.03.2021', '20.03.2021']
+        data: ['10.03.2021', '15.03.2021', '16.03.2021', '17.03.2021', '18.03.2021', '19.03.2021', '20.03.2021']
       },
       yAxis: {
           type: 'value',
           min: 30,
       },
       series: [{
-          data: [50, 51, 50.5, 52, 52.5, 50, 49],
+          data: [9, 10, 30, 19, 18, 16, 15],
           type: 'line',
-
+         
           lineStyle: {
             color: '#54F391',
             width: 3,
@@ -72,6 +72,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 @media (min-width:731px){
   .chart {
     height: 350px
@@ -82,5 +83,6 @@ export default defineComponent({
   .chart {
     height: 233px
   }
+
 }
 </style>

@@ -24,10 +24,12 @@
 
   <div class="chart-flexbox">
     <div class="add-weight-button-container"> <div class="add-weight-button" @click="showWeight()">+ Добавить Вес</div> </div>
+
     <div class="chart-container">
       <div class="chart-name">График изменения веса</div>
       <demoChart/>
     </div>
+
   </div>
 
   <modalWeight ref="mWeight"/>
@@ -41,7 +43,7 @@ import demoChart from './charts/demochart.vue'
 import modalWeight from './components/modalWeight.vue'
 
 export default {
-  name: 'profile',
+  name: 'secondPage',
   components:{
     middleAccDiv,
     demoChart,
