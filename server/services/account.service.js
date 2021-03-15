@@ -1,5 +1,5 @@
 const { databaseProvider } = require("../providers/database.provider");
-const { 
+const {
   InvalidCredentialsError
 } = require("../app_modules/exception")
 const Account = require("../app_modules/account");

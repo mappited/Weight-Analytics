@@ -6,7 +6,7 @@ const { sessionService } = require("../services/session.service");
 
 
 /**
- * Request body 
+ * Request body
  *    {"email": "...", "password": "..."}
  * Response:
  *    CODE 201  {"status_code": 201, "status": "created", "data": {"client_uuid": <string>}}
@@ -15,6 +15,7 @@ const { sessionService } = require("../services/session.service");
 router.post("/sign-up", async (req, res, next) => {
   let data = {};
   try {
+    console.log(req.body);
     data = await accountService.createAccount(req.body);
     res.status(201);
   } catch (error) {
@@ -34,7 +35,7 @@ router.post("/sign-up", async (req, res, next) => {
 router.post("/sign-in", async (req, res, next) => {
   let data = {};
   try {
-    data = await sessionService.createSession({ credentials: req.body, req, res }); 
+    data = await sessionService.createSession({ credentials: req.body, req, res });
     res.status(200);
   } catch (error) {
     data = HTTPError.toHTTPError(error);
@@ -63,4 +64,3 @@ router.post("/sign-out", async (req, res, next) => {
 
 
 module.exports = router;
-
