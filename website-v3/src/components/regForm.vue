@@ -25,7 +25,7 @@
               <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Повторите пароль">
           </p>
 
-          <router-link to="/" @click="this.$parent.hideRegForce();this.$parent.showLogin()" :class="isMobileButton" class="registration-submit outline-off reg-form-submit-p" type="submit" value="Зарегистрироваться">Зарегистрироваться</router-link>
+          <input to="/" @click="this.$parent.hideRegForce()" :class="isMobileButton" class="registration-submit outline-off reg-form-submit-p" type="submit" value="Зарегистрироваться">
       </div>
   </form>
 </template>
