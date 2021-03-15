@@ -5,17 +5,17 @@
 
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
               <label class="email-label" for="signin-email"></label>
-              <input :class="isMobileInput" class="email-input label-form outline-off" id="signin-email" type="email" placeholder="Почта">
+              <input :class="isMobileInput" class="email-input label-form outline-off" id="signin-email" type="email" placeholder="Почта" name="email">
           </p>
 
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
               <label class="password-label " for="signin-password"></label>
-              <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Пароль">
+              <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Пароль" name="password">
           </p>
       </div>
       <div class="log-in-forgotten">
           <p :class="isMobileField" class="fields label-font -margin-not">
-              <router-link to="/Profile"><input class="login-submit outline-off " type="submit" value="Войти"></router-link>
+              <router-link to="/Profile"><input class="login-submit outline-off" type="submit" value="Войти"></router-link>
           </p>
           <a href="#" class="forgotten label-font" @click="showfpass()">Забыли пароль?</a>
       </div>

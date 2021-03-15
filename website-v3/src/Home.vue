@@ -21,7 +21,7 @@
         <h1 class="firstMotivateText">Отслеживайте свой вес!</h1>
         <h2 class="secondMotivateText">Соблюдаете диету или занимаетесь спортом? WeightCalendar идеально подойдет для вас!</h2>
 
-        <div class="overlay" id="overlay-modal"></div>
+        <!-- <div class="overlay" id="overlay-modal"></div> -->
         <mobileLogin/>
 
     </body>
