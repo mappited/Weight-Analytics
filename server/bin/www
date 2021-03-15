@@ -9,12 +9,12 @@ const debug = require("debug")("wcs:server");
 const http = require("http");
 const https = require("https");
 
+
 /**
  * Get port from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || "3000");
-const PORT = port;
 app.set("port", port);
 
 /**
@@ -97,6 +97,6 @@ function onListening() {
   const bind = typeof addr === "string"
     ? "pipe " + addr
     : "port " + addr.port;
-  debug(`${SSL_MODE ? "HTTPS" : "HTTP"} server is listening on ${bind}`);
-  debug(`${(SSL_MODE ? "HTTPS" : "HTTP").toLowerCase()}://127.0.0.1:${PORT}`);
+  const host = `${(SSL_MODE ? "HTTPS" : "HTTP").toLowerCase()}://127.0.0.1:${addr.port}`;
+  debug(`${SSL_MODE ? "HTTPS" : "HTTP"} server is listening on ${bind} (${host})`);
 }

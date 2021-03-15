@@ -11,8 +11,18 @@ const ENV = {
   DEBUG: "wcs:*",
   WCS_FIREBASE_URL: "",
   PORT: "3000",
+  IS_USING_POSTGRESQL: true,
+  POSTGRESQL_HOST: "",
+  POSTGRESQL_PORT: "",
+  POSTGRESQL_USER: "",
+  POSTGRESQL_PASSWORD: "",
   "SSL_DIR": `${__dirname}/../ssl`
 };
+
+const AnswerVariant = [{}, ["NO", "N"], ["YES", "Y"]].reduce((obj, key) => {
+  obj[key[0]] = key[1];
+  return obj
+});
 
 const exportVariable = os.platform() === "win32"
   ? "$env:"
@@ -23,19 +33,45 @@ const cmd = readline.createInterface({
   output: process.stdout
 });
 
+function contvertAnswerToBoolean(text) {
+  return /^t$|^true$|^y$|^yes$|^agree$/i.test(text);
+}
+
 const question = util.promisify(cmd.question).bind(cmd);
 
 async function writeEnvFile() {
-  ENV.GOOGLE_APPLICATION_CREDENTIALS = await question("GOOGLE_APPLICATION_CREDENTIALS: ");
-  ENV.WCS_FIREBASE_URL = await question("WCS_FIREBASE_URL: ");
+  
   PORT = (await question(`PORT (${ENV.PORT}): `)).trim() || ENV.PORT;
   if (/^\d{2,6}$/.test(PORT)) {
     ENV.PORT = PORT;
   }
+  
+  const IS_USING_POSTGRESQL = await askQuestion({
+      questionText: "Do you want to use PostgreSQL as DB",
+      defaultAnswer: AnswerVariant.YES
+  });
 
-  SSL_MODE = ((await question(`SSL_MODE (true): `)) || "true").trim();
+  if (IS_USING_POSTGRESQL) {
+    POSTGRESQL_HOST = await question("PostgreSQL hostname or ip address (127.0.0.1): ");
+    ENV.POSTGRESQL_PORT = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(POSTGRESQL_PORT)
+      ? POSTGRESQL_PORT
+      : "127.0.0.1";
 
-  if (/^false$/i.test(SSL_MODE)) {
+    POSTGRESQL_PORT = await question("PostgreSQL port (5432): ");
+    ENV.POSTGRESQL_PORT = /^\d*$/i.test(POSTGRESQL_PORT)
+      ? POSTGRESQL_PORT
+      : "5432";
+  
+    ENV.POSTGRESQL_USER = await question("PostgreSQL user name: "); 
+    ENV.POSTGRESQL_PASSWORD = await question("PostgreSQL password: ");
+  } else {
+    ENV.GOOGLE_APPLICATION_CREDENTIALS = await question("GOOGLE_APPLICATION_CREDENTIALS: ");
+    ENV.WCS_FIREBASE_URL = await question("WCS_FIREBASE_URL: ");
+  }
+
+  SSL_MODE = contvertAnswerToBoolean(((await question(`SSL_MODE (true): `)) || "true").trim());
+
+  if (SSL_MODE) {
     ENV.SSL_MODE = false;
   } else {
     ENV.SSL_MODE = true;
@@ -45,6 +81,7 @@ async function writeEnvFile() {
 
   if (await askQuestion({ questionText: "Do you want to rewrite env file?" })) {
     const data = [
+      IS_USING_POSTGRESQL
       `${exportVariable}DEBUG="${ENV.DEBUG}"\n`,
       `${exportVariable}GOOGLE_APPLICATION_CREDENTIALS=${ENV.GOOGLE_APPLICATION_CREDENTIALS}\n`,
       `${exportVariable}WCS_FIREBASE_URL=${ENV.WCS_FIREBASE_URL}\n`,
@@ -58,34 +95,21 @@ async function writeEnvFile() {
   }
 }
 
-const AnswerVariant = [{}, ["NO", "N"], ["YES", "Y"]].reduce((obj, key) => {
-  obj[key[0]] = key[1];
-  return obj
-});
 
-async function askQuestion(
-  {
+
+async function askQuestion({
     questionText,
     defaultAnswer=AnswerVariant.NO,
     optionalText=""
   } = {
     defaultAnswer: AnswerVariant.NO
-  }) {
+}) {
   const tag = defaultAnswer === AnswerVariant.NO
     ? `[${AnswerVariant.YES.toLowerCase()}/${AnswerVariant.NO}]`
     : `[${AnswerVariant.YES}/${AnswerVariant.NO.toLowerCase()}]`
-  let agree = defaultAnswer === AnswerVariant.YES
-    ? false
-    : false;
 
-  const answer = await question(`${questionText} ${tag} ${optionalText}`);
-  if ( /^n(o){0,1}$/i.test(answer) ) {
-    agree = false;
-  } else if ( /^y(es){0,1}$/i.test(answer) ) {
-    agree = true;
-  }
-
-  return agree;
+  const answer = (await question(`${questionText} ${tag} ${optionalText}`)).trim() || defaultAnswer;
+  return contvertAnswerToBoolean(answer);
 }
 
 async function main() {
