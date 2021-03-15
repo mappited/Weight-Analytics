@@ -12,20 +12,20 @@
       </div> -->
       <div class="Reg-column-forms">
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
-              <label class="email-label" for="signin-email"></label>
+              <label class="email-label" for="signup-email"></label>
               <input :class="isMobileInput" class="email-input label-form outline-off" id="signin-email" type="email" name="email" placeholder="Почта">
 
           </p>
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
-              <label class="password-label " for="signin-password"></label>
+              <label class="password-label " for="signup-password"></label>
               <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" name="password" placeholder="Пароль">
           </p>
           <p :class="isMobileField" class="fields auth-fields label-font m-b-forms">
-              <label class="password-label " for="signin-password"></label>
+              <label class="password-label " for="signup-password-repeat"></label>
               <input :class="isMobileInput" class="password-input label-form outline-off" id="signin-password" type="password" placeholder="Повторите пароль">
           </p>
 
-          <input to="/" @click="this.$parent.hideRegForce()" :class="isMobileButton" class="registration-submit outline-off reg-form-submit-p" type="submit" value="Зарегистрироваться">
+          <div to="/" @click="registerFetch()" :class="isMobileButton" class="registration-submit outline-off reg-form-submit-p" type="submit" value="Зарегистрироваться">Зарегистрироваться</div>
       </div>
   </form>
 </template>
@@ -35,6 +35,24 @@ export default {
   name: 'regForm',
   props:{
     mobile: Boolean
+  },
+  methods:{
+    registerFetch(){
+      async function postData(url = '', t) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, *cors, same-origin
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *client
+          body: t // body data type must match "Content-Type" header
+        });
+        return await response.text(); // parses JSON response into native JavaScript objects
+      }
+      postData('/api/account/sign-up', '{"email":"'+ document.getElementById("signin-email").value +'", "password":"'+ document.getElementById("signin-password").value +'"}')
+    },
   },
   computed:{
     isMobileField: function(){
