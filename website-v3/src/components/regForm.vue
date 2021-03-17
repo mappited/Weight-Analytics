@@ -1,5 +1,5 @@
 <template>
-  <form name="registration-form-name" action="#" class="registrationForm" method="POST">
+  <div class="registrationForm">
       <!-- <div class="name-surname-quter">
           <p :class="isMobileField" class="fields m-b-forms">
               <label class="name-label" for="signup-name"></label>
@@ -25,9 +25,9 @@
               <input :class="isMobileInput" class="password-input label-form outline-off" id="signup-password-retype" type="password" placeholder="Повторите пароль">
           </p>
 
-          <div to="/" @click="registerFetch()" :class="isMobileButton" class="registration-submit outline-off reg-form-submit-p" type="submit" value="Зарегистрироваться">Зарегистрироваться</div>
+          <button @click="registerFetch()" :disabled="isDisabled" :class="isMobileButton" class="gen-button registration-submit outline-off reg-form-submit-p">Зарегистрироваться</button>
       </div>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -52,9 +52,51 @@ export default {
           },
           body: t // body data type must match "Content-Type" header
         });
-        return await response.json(); // parses JSON response into native JavaScript objects
+        return await response
       }
-      postData('/api/account/sign-up', '{"email":"'+ document.getElementById("signup-email").value +'", "password":"'+ document.getElementById("signup-password").value +'"}')
+      if(document.getElementById("signup-password").value !== document.getElementById("signup-password-retype").value){
+        alert("Введённые пароли не совпадают.")
+      }else{
+        this.regProcessing = true;
+
+        postData('/api/account/sign-up', '{"email":"'+ document.getElementById("signup-email").value +'", "password":"'+ document.getElementById("signup-password").value +'"}')
+          .then((res) => {
+            var err_txt;
+            async function printError(txt) {
+              res.json().then((value) => {
+                err_txt = value.message
+                alert(txt + err_txt)
+              });
+            }
+            switch (res.status) {
+              case 400:
+                printError("Неверно введена почта. Ошибка: ")
+                break;
+
+              case 401:
+                printError("Данная почта уже используется либо пароль короче 6 символов. Ошибка: ")
+                break;
+
+              case 201:
+                alert("Аккаунт успешно создан!")
+                document.getElementById("signup-email").value = ""
+                document.getElementById("signup-password").value = ""
+                document.getElementById("signup-password-retype").value = ""
+                this.$parent.hideRegForce();
+                break;
+
+              default:
+                printError("Произошла серверная ошибка. ")
+            }
+            this.regProcessing = false
+          })
+          .catch((err) => {
+            console.log(err);
+            alert("Произошла ошибка")
+            this.regProcessing = false
+          })
+
+      }
     },
   },
   computed:{
@@ -85,6 +127,14 @@ export default {
       }else{
         return null;
       }
+    },
+    isDisabled: function(){
+        return this.regProcessing;
+    }
+  },
+  data: function () {
+    return{
+      regProcessing: false,
     }
   }
 }

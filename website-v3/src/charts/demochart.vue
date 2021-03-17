@@ -13,7 +13,7 @@ import {
   GridComponent
 } from "echarts/components";
 import VChart, { THEME_KEY } from "vue-echarts";
-import { ref, defineComponent } from "vue";
+import { defineComponent } from "vue";
 
 use([
   CanvasRenderer,
@@ -32,44 +32,49 @@ export default defineComponent({
   provide: {
     [THEME_KEY]: "light"
   },
-  setup: () => {
-    const option = ref({
-      xAxis: {
-        type: "category",
-        data: ['10.03.2021', '15.03.2021', '16.03.2021', '17.03.2021', '18.03.2021', '19.03.2021', '20.03.2021']
-      },
-      yAxis: {
-          type: 'value',
-          min: 20,
-      },
-      series: [{
-          data: [20, 23, 23.3, 24.5, 26, 23, 20],
-          type: 'line',
-
-          lineStyle: {
-            color: '#54F391',
-            width: 3,
-            shadowColor: 'rgba(33, 208, 53, 0.82)',
-            shadowBlur: 10,
-            shadowOffsetY: 4
-          },
-          itemStyle: {
-            opacity:1,
-            color:"red",
-          }
-      }],
-      grid: {
-        left: 50,
-        top: 60,
-        right: 50,
-        bottom: 50
-      }
-    });
-
-    return { option };
+  props:{
+    xAxisData: Array,
+    yAxisData: Array
   },
   mounted (){
     this.$forceUpdate()
+    console.log(this.option)
+  },
+  data: function () {
+    return{
+      option:
+      {xAxis: {
+          type: "category",
+          data: this.xAxisData
+        },
+        yAxis: {
+            type: 'value',
+            min: 20,
+        },
+        series: [{
+            data: this.yAxisData,
+            type: 'line',
+
+            lineStyle: {
+              color: '#54F391',
+              width: 3,
+              shadowColor: 'rgba(33, 208, 53, 0.82)',
+              shadowBlur: 10,
+              shadowOffsetY: 4
+            },
+            itemStyle: {
+              opacity:1,
+              color:"red",
+            }
+        }],
+        grid: {
+          left: 50,
+          top: 60,
+          right: 50,
+          bottom: 50
+        }
+      }
+    }
   }
 });
 </script>

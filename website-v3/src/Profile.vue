@@ -6,7 +6,7 @@
 
           <div class="left-side-menu-mobile left-side-menu">
                   <a class="menu-acc-circle-mobile menu-acc-circle menu-acc" href="#" id=""><div class="acc-circle "></div></a>
-                  
+
                   <router-link to="/" class="signOut-div-mobile signOut-div"><a class="signout-a-image"><img src="./assets/sign_out1.png" class="signout"></a></router-link>
           </div>
 
@@ -23,12 +23,12 @@
   <div class="chart-flexbox">
     <div class="add-weight-button-container"> <div class="add-weight-button" @click="showWeight()" style="cursor:pointer">+ Добавить Вес</div> </div>
 
-    <div class="chart-container">
+    <div class="chart-container" @click="chartAddon()">
       <div class="flex-container-name-n-choseDate">
-        <div class="chart-name">График изменения веса</div>
+        <div class="chart-name" ref="chartWeight">График изменения веса</div>
         <div class="switchDate-button-container left-margin-container-chart"><div class="switchDate-button" @click="showDataSwitch()" style="cursor:pointer">Выбрать дату</div></div>
       </div>
-      <demoChart/>
+      <demoChart :x-axis-data="xAxisData" :y-axis-data="yAxisData" />
     </div>
 
   </div>
@@ -59,9 +59,19 @@ export default {
     },
     showDataSwitch(){
       this.$refs.mDate.showDate()
+    },
+    chartAddon(){
+      
+    }
+  },
+  data: function(){
+    return{
+      xAxisData: [1,2,3,4,5],
+      yAxisData: [10,20,30,40,50]
     }
   }
 }
+
 </script>
 
 <style scoped>

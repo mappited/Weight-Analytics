@@ -43,12 +43,7 @@ export default {
   },
   title: 'WeightCalendar',
   methods: {
-    count () {
-      return this.$store.state.tok
-    }
-  },
-  mounted(){
-    console.log(this.count());
+
   }
 }
 

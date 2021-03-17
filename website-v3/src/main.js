@@ -1,4 +1,3 @@
-import { createStore } from 'vuex'
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -29,23 +28,8 @@ const router = createRouter({
   routes,
 })
 
-const store = createStore({
-  state () {
-    return {
-      tok: 1
-    }
-  },
-  mutations:{
-    set (state, payload) {
-      state.tok = payload
-    }
-  }
-})
 
 const app = createApp(App)
 app.mixin(titleMixin)
 app.use(router)
-app.use(store)
 app.mount('#app')
-
-

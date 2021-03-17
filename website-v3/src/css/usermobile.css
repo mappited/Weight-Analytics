@@ -125,6 +125,17 @@
   margin-left: auto;
 }
 
+.gen-button:hover{
+    opacity: 0.8;
+    transition:1s;
+    color: white;
+    cursor: pointer;
+}
+
+.gen-button:disabled{
+    opacity: 0.5;
+}
+
 p{margin: 0;padding: 0;}
 .header-div-second-page{
     padding-top: 30px;
@@ -304,7 +315,7 @@ p{margin: 0;padding: 0;}
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .chooseDate-button-link{
