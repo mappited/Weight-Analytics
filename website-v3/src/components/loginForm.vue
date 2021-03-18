@@ -15,7 +15,7 @@
       </div>
       <div class="log-in-forgotten">
           <p :class="isMobileField" class="fields label-font -margin-not">
-              <button class="gen-button login-submit outline-off" @click="loginFetch()" :disabled="isDisabled">Войти</button>
+              <button class="gen-button login-submit outline-off" @click="loginFetch()" :disabled="isDisabled" value="Войти">Войти</button>
           </p>
           <a href="#" class="forgotten label-font" @click="showfpass()">Забыли пароль?</a>
       </div>

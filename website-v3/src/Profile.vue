@@ -7,7 +7,7 @@
           <div class="left-side-menu-mobile left-side-menu">
                   <a class="menu-acc-circle-mobile menu-acc-circle menu-acc" href="#" id=""><div class="acc-circle "></div></a>
 
-                  <router-link to="/" class="signOut-div-mobile signOut-div"><a class="signout-a-image"><img src="./assets/sign_out1.png" class="signout"></a></router-link>
+                  <div class="gen-button signOut-div-mobile signOut-div" @click="logoutFetch()"><a class="signout-a-image"><img src="./assets/sign_out1.png" class="signout"></a></div>
           </div>
 
 
@@ -61,7 +61,110 @@ export default {
       this.$refs.mDate.showDate()
     },
     chartAddon(){
-      
+
+    },
+    weightFetch(){
+        async function postData(url = '', t) {
+          // Default options are marked with *
+          const response = await fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *client
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: t // body data type must match "Content-Type" header
+          });
+          return await response // parses JSON response into native JavaScript objects
+        }
+
+        this.logProcessing = true;
+
+        postData('/data')
+          .then((res) => {
+            var err_txt;
+
+            async function printError(txt) {
+              res.json().then((value) => {
+                err_txt = value.message
+                alert(txt + err_txt)
+              });
+            }
+
+            switch (res.status) {
+              case 200:
+                var chartd;
+                res.json().then((value) => {
+                  chartd = value
+                });
+                console.log(chartd);
+                this.$parent.hideDateForce();
+                break;
+
+              default:
+                printError("Произошла серверная ошибка. ")
+            }
+            this.logProcessing = false
+
+          })
+          .catch((err) => {
+            console.log(err);
+            alert("Произошла ошибка.");
+            this.logProcessing = false
+          })
+
+      },
+    logoutFetch(){
+      async function postData(url = '', t) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, *cors, same-origin
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *client
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: t // body data type must match "Content-Type" header
+        });
+        return await response // parses JSON response into native JavaScript objects
+      }
+
+      this.logProcessing = true;
+
+      postData('/api/account/sign-out')
+        .then((res) => {
+          var err_txt;
+
+          async function printError(txt) {
+            res.json().then((value) => {
+              err_txt = value.message
+              alert(txt + err_txt)
+            });
+          }
+
+          switch (res.status) {
+            case 200:
+              this.$router.push('/')
+              break;
+
+            default:
+              printError("Произошла серверная ошибка. ")
+          }
+          this.logProcessing = false
+
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("Произошла ошибка.");
+          this.logProcessing = false
+        })
+
     }
   },
   data: function(){
@@ -69,7 +172,7 @@ export default {
       xAxisData: [1,2,3,4,5],
       yAxisData: [10,20,30,40,50]
     }
-  }
+  },
 }
 
 </script>
