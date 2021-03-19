@@ -315,7 +315,7 @@ p{margin: 0;padding: 0;}
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-family: SF Pro Display;
 }
 
 .chooseDate-button-link{
@@ -326,6 +326,7 @@ p{margin: 0;padding: 0;}
   align-items: center;
   justify-content: center;
   z-index: 5;
+  font-family: SF Pro Display;
 }
 .show-chosenBlock1{
   width: 50%;

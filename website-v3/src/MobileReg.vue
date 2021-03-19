@@ -8,7 +8,7 @@
         </div>
     </header>
 
-    <div class="mobileLogin">
+    <div class="mobileLogin modeRegForm">
       <h2 class="mobileHeaderText">Регистрация</h2>
           <regForm :mobile='true'></regForm>
     </div>
