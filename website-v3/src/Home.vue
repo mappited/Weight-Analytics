@@ -20,12 +20,15 @@
         </header>
         <h1 class="firstMotivateText">Отслеживайте свой вес!</h1>
         <h2 class="secondMotivateText">Соблюдаете диету или занимаетесь спортом? WeightCalendar идеально подойдет для вас!</h2>
-        <img src="./img/sketchpng.png" class="mainPng">
 
-        <div class="overlay" id="overlay-modal"></div>
+        <!-- <div class="overlay" id="overlay-modal"></div> -->
         <mobileLogin/>
 
     </body>
+    <footer>
+      <img src="./img/sketchpngc.png" class="mainPng">
+    </footer>
+
 </template>
 
 <script>
@@ -38,8 +41,12 @@ export default {
     mobileLogin,
     rightMenuButtons
   },
-  title: 'WeightCalendar'
+  title: 'WeightCalendar',
+  methods: {
+
+  }
 }
+
 </script>
 
 

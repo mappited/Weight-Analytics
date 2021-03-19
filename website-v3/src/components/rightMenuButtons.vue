@@ -43,7 +43,7 @@ export default {
       hideMod: "display: none",
       appearLog: false,
       appearReg: false,
-      close: true
+      outside: true
     }
   },
   methods: {

@@ -1,0 +1,19 @@
+
+.notfound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.errorNumber{
+    font-size: 178px;
+    color: #F35454;
+    font-family: SF Pro Display;
+    padding-right: 136px;
+}
+.errorMessage{
+    text-align: center;
+    font-size: 70px;
+    color: black;
+    font-family: SF Pro Display;
+}

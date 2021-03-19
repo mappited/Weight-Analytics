@@ -66,6 +66,13 @@
     width:85%;
     margin:0px auto;
   }
+  .registrationForm{
+    margin-bottom: 150px;
+  }
+  .modeRegForm{
+    margin-top: 50px;
+  }
+  /* /////////// */
   .mobile-fields{
     width:100%;
   }

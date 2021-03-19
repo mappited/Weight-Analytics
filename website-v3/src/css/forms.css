@@ -62,7 +62,7 @@ p.registration-switch-text{
     border-radius: 15px;
     box-shadow: none;
     border:0;
-    /*  */
+    padding-top: 3px;
     font-weight: 400;
     /*  */
 }
@@ -114,7 +114,8 @@ p.registration-switch-text{
     font-size: 25px;
     text-align: center;
     letter-spacing: 0.6px;
-    margin-bottom: 59px;
+    margin-bottom: 47px;
+    padding-top: 12px;
 
 }
 .registration-switch-text{
@@ -153,6 +154,7 @@ p.registration-switch-text{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 59px;
 }
 .registration-submit{
     background-color: #00CC33;
@@ -174,4 +176,9 @@ p.registration-switch-text{
     display: flex;
     padding-top: 0px;
     margin-top: 0px;
+}
+
+
+.reg-form-submit-p{
+    margin-top: 63px;
 }

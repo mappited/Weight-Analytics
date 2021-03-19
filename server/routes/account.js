@@ -1,76 +1,66 @@
 const express = require('express');
 const router = express.Router();
-const crypto = require('crypto');
+const { HTTPError } = require("../app_modules/exception")
+const { accountService } = require("../services/account.service");
+const { sessionService } = require("../services/session.service");
 
 
-
-class Account {
-
-  static get PASSWORD_LENGHT() {
-    return 6;
+/**
+ * Request body
+ *    {"email": "...", "password": "..."}
+ * Response:
+ *    CODE 201  {"status_code": 201, "status": "created", "data": {"client_uuid": <string>}}
+ *    CODE 401  {"status_code": 401, "status": "unauthorized", "error": {"code": <number>, "message": <string>}}
+ */
+router.post("/sign-up", async (req, res, next) => {
+  let data = {};
+  try {
+    console.log(req.body);
+    data = await accountService.createAccount(req.body);
+    res.status(201);
+  } catch (error) {
+    data = HTTPError.toHTTPError(error);
+    res.status(data.code);
   }
-
-  static get SALT() {
-    return process.env.SALT || "locjKkTO61czhIkOMga2eTw2dEQYU73E3ZAvBwIsbFo=";
-  }
-
-  constructor({ email, password }) {
-    this.email = (email || "").toLowerCase();
-    this.password = password || "";
-  }
-
-  get isValid() {
-    return /^[a-z]+@[a-z]+.[a-z]+$/i.test(this.email) &&
-      this.password.length >= Account.PASSWORD_LENGHT;
-  }
-
-  async makeData() {
-    return new Promise((resolve, reject) => {
-      if (!this.isValid)
-        return reject(new Error("invalid data"));
-      const hash = crypto.createHash('sha256');
-      hash.on("readable", () => {
-        const data = hash.read();
-        if (data) {
-          resolve({
-            email: this.email,
-            password: data.toString('hex')
-          });
-        }
-      });
-      hash.write(`${this.password}${Account.SALT}`);
-      hash.end();
-    });
-  }
-}
-
-/* GET home page. */
-router.post('/auth', async (req, res, next) => {
-  res.render('index', { title: 'Express' });
+  res.json(data);
 });
 
-router.post("/sign-up", async (req, res, nex) => {
-  const accountData = new Account(req.body);
+/**
+ * Request body
+ *    {"email": "...", "password": "..."}
+ * Response:
+ *    CODE 200  {"status_code": 200, "status": "success", "data": {"client_uuid": <string>, "token": <string>}}
+ *    CODE 401  {"status_code": 401, "status": "unauthorized", "error": {"code": <number>, "message": <string>}}
+ */
+router.post("/sign-in", async (req, res, next) => {
+  let data = {};
   try {
-    const data = await accountData.makeData();
-    res.json({status: "success", data });
-  } catch(error) {
-    res.status(400);
-    res.json({status: "failure", error: error.message });
+    data = await sessionService.createSession({ credentials: req.body, req, res });
+    res.status(200);
+  } catch (error) {
+    data = HTTPError.toHTTPError(error);
+    res.status(data.code);
   }
+  res.json(data);
 });
 
-router.post("/sign-in", async (req, res, nex) => {
-  const accountData = new Account(req.body);
+/**
+ * Request body
+ *    {"token": "..."}
+ * Response:
+ *    CODE 200  {"status_code": 200, "status": "accepted", "data": {"client_uuid": <string>, "timestamp": <number>}}
+ *    CODE 401  {"status_code": 401, "status": "unauthorized", "error": {"code": <number>, "message": <string>}}
+ */
+router.post("/sign-out", async (req, res, next) => {
+  let data = {};
   try {
-    const data = await accountData.makeData();
-    res.json({status: "success", data });
-  } catch(error) {
-    res.status(400);
-    res.json({status: "failure", error: error.message });
+    data = await sessionService.createSession(req.body);
+  } catch (error) {
+    data = HTTPError.toHTTPError(error);
+    res.status(data.code);
   }
+  res.json(data);
 });
 
 
 module.exports = router;
-
