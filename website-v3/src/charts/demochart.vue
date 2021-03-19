@@ -41,8 +41,7 @@ export default defineComponent({
   },
   methods: {
     forceRerender(xd, yd, my) {
-      console.log(xd);
-      console.log(yd);
+      //console.log(my);
       this.option = {xAxis: {
           type: "category",
           data: xd,

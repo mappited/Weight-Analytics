@@ -156,6 +156,7 @@ export default {
 
                   var xAxisParse = [];
                   var yAxisParse = [];
+                  var yAxisNoNull = [];
 
                   var startp = new Date(chartd.first)
                   var endp = new Date(chartd.second);
@@ -172,6 +173,7 @@ export default {
                     if(loop.toISOString().split('T')[0] == new Date(chartd.data[index-1].date).toISOString().split('T')[0]){
                       xAxisParse.push(chartd.data[index-1].date.split("T")[0])
                       yAxisParse.push(chartd.data[index-1].mass)
+                      yAxisNoNull.push(chartd.data[index-1].mass)
                       index--;
                     }else{
                       xAxisParse.push(loop.toISOString().split('T')[0])
@@ -183,7 +185,9 @@ export default {
                   }
                   this.xAxisData = xAxisParse
                   this.yAxisData = yAxisParse
-                  this.$refs.dchart.forceRerender(xAxisParse, yAxisParse, Math.min(yAxisParse)-8);
+
+                  var armin = Math.min.apply(Math, yAxisNoNull)
+                  this.$refs.dchart.forceRerender(xAxisParse, yAxisParse, armin*0.96);
                 });
                 this.$refs.mDate.hideDateForce();
                 break;
