@@ -28,7 +28,7 @@
         <div class="chart-name" ref="chartWeight">График изменения веса</div>
         <div class="switchDate-button-container left-margin-container-chart"><div class="switchDate-button" @click="showDataSwitch()" style="cursor:pointer">Выбрать дату</div></div>
       </div>
-      <demoChart :x-axis-data="xAxisData" :y-axis-data="yAxisData" />
+      <demoChart ref="dchart" :x-axis-data="xAxisData" :y-axis-data="yAxisData" />
     </div>
 
   </div>
@@ -58,7 +58,7 @@ export default {
       this.$refs.mWeight.showWeight();
     },
     showDataSwitch(){
-      this.$refs.mDate.showDate()
+      this.$refs.mDate.showDate();
     },
     weightAddFetch(wadd){
         async function postData(url = '', t) {
@@ -152,7 +152,7 @@ export default {
                 var chartd;
                 res.json().then((value) => {
                   chartd = value
-                  console.log(chartd);
+                  //console.log(chartd);
 
                   var xAxisParse = [];
                   var yAxisParse = [];
@@ -163,12 +163,12 @@ export default {
 
                   var loop = new Date(startp);
                   var index = Object.keys(chartd.data).length;
-                  console.log(index);
+                  //console.log(index);
                   var newDate = loop.setDate(loop.getDate());
                   while(loop <= endp){
 
-                    console.log(loop.toISOString().split('T')[0]);
-                    console.log(new Date(chartd.data[index-1].date).toISOString().split('T')[0]);
+                    //console.log(loop.toISOString().split('T')[0]);
+                    //console.log(new Date(chartd.data[index-1].date).toISOString().split('T')[0]);
                     if(loop.toISOString().split('T')[0] == new Date(chartd.data[index-1].date).toISOString().split('T')[0]){
                       xAxisParse.push(chartd.data[index-1].date.split("T")[0])
                       yAxisParse.push(chartd.data[index-1].mass)
@@ -183,6 +183,7 @@ export default {
                   }
                   this.xAxisData = xAxisParse
                   this.yAxisData = yAxisParse
+                  this.$refs.dchart.forceRerender(xAxisParse, yAxisParse, Math.min(yAxisParse)-8);
                 });
                 this.$refs.mDate.hideDateForce();
                 break;
@@ -250,7 +251,7 @@ export default {
   data: function(){
     return{
       xAxisData: [1,2,3,4,5],
-      yAxisData: [40,30,35,40,45]
+      yAxisData: [35,30,38,43,45]
     }
   },
 }

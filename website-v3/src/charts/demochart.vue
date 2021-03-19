@@ -1,5 +1,5 @@
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <v-chart class="chart" :option="option" :key="componentKey" ref="thechart" autoresize />
 </template>
 
 <script>
@@ -39,8 +39,51 @@ export default defineComponent({
   mounted (){
     this.$forceUpdate()
   },
+  methods: {
+    forceRerender(xd, yd, my) {
+      console.log(xd);
+      console.log(yd);
+      this.option = {xAxis: {
+          type: "category",
+          data: xd,
+        },
+        yAxis: {
+            type: 'value',
+            min: my,
+        },
+        series: [{
+            data: yd,
+            type: 'line',
+            connectNulls: true,
+
+            lineStyle: {
+              color: '#54F391',
+              width: 3,
+              shadowColor: 'rgba(33, 208, 53, 0.82)',
+              shadowBlur: 10,
+              shadowOffsetY: 4
+            },
+            itemStyle: {
+              opacity:1,
+              color:"red",
+            }
+        }],
+        grid: {
+          left: 50,
+          top: 60,
+          right: 50,
+          bottom: 50
+        }
+      }
+
+      this.$refs.thechart.setOption(this.option)
+      this.componentKey += 1;
+    }
+
+  },
   data: function () {
     return{
+      componentKey: 0,
       option:
       {xAxis: {
           type: "category",
@@ -53,6 +96,7 @@ export default defineComponent({
         series: [{
             data: this.yAxisData,
             type: 'line',
+            connectNulls: true,
 
             lineStyle: {
               color: '#54F391',
