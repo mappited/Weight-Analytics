@@ -6,12 +6,12 @@
               <h2 class="modalHeader__text-input-weight-form">Итак...<br>Ваш вес на сегодня?</h2>
           </div>
           <div class="modalBody">
-              <form action="/" name="weight-submit" method="POST">
+              <div name="weight-submit">
                 <div class="weight-submit-div" style="display:flex; padding-bottom:20px">
-                  <input type="number" min="20" max ="120" placeholder="" step="0.1" value="23" class="weight-input-text">
-                  <input type="submit" value="Готово" class="weight-input-submit-button">
+                  <input type="number" min="20" max ="120" placeholder="" step="0.1" value="23" id="mass-input" class="weight-input-text">
+                  <button type="submit" value="Готово" class="weight-input-submit-button" @click="addWeight()">Готово</button>
                 </div>
-              </form>
+              </div>
           </div>
         </div>
   </div>
@@ -37,6 +37,13 @@ export default {
     },
     showWeight(){
       this.appearWeight = true
+    },
+    hideWeightForce(){
+      this.appearWeight = false
+    },
+    addWeight(){
+      var wadd = document.getElementById('mass-input').value;
+      this.$parent.weightAddFetch(wadd);
     }
   }
 }

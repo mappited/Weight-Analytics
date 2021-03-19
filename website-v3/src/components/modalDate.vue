@@ -20,14 +20,14 @@
                     <div class="BlockFixation-div">
                       <div action="/profile" name="date">
                         <div class="fixationList">
-                            <select name="name" id="" class="fixationSelect">
-                              <option value="1" class="Select-OP" selected>1 неделя</option>
-                              <option value="2" class="Select-OP">2 недели</option>
-                              <option value="1" class="Select-OP">1 месяц</option>
-                              <option value="6" class="Select-OP">6 месяцев</option>
-                              <option value="1" class="Select-OP">1 год</option>
+                            <select name="name" id="datePreset" class="fixationSelect">
+                              <option value="week" class="Select-OP" selected>1 неделя</option>
+                              <option value="two_weeks" class="Select-OP">2 недели</option>
+                              <option value="month" class="Select-OP">1 месяц</option>
+                              <option value="half_year" class="Select-OP">6 месяцев</option>
+                              <option value="year" class="Select-OP">1 год</option>
                             </select>
-                            <button type="submit" value="Выбрать" class="fixationSubmit-button outline-off" @click="this.$parent.weightFetch();">Выбрать</button>
+                            <button type="submit" value="Выбрать" class="fixationSubmit-button outline-off" @click="fetchPresetDate()">Выбрать</button>
                           </div>
                       </div>
                     </div>
@@ -52,7 +52,7 @@
 
                               <div class="flexCalendars-block"><label for="end" class="labelForm-date">Конец измерений<input type="date" name="date" id="end" required class="styleDate-input"></label></div>
                           </div>
-                          <button type="submit" value="Выбрать" class="fixationSubmit-button outline-off" @click="this.$parent.weightFetch();">Выбрать</button>
+                          <button type="submit" value="Выбрать" class="fixationSubmit-button outline-off" @click="fetchCustomDate()">Выбрать</button>
                         </div>
                       </div>
                     </div>
@@ -107,6 +107,15 @@ export default {
 
 
     },
+    fetchPresetDate(){
+      var sv = document.getElementById('datePreset').value;
+      this.$parent.weightFetch(sv)
+    },
+    fetchCustomDate(){
+      var start = document.getElementById('start').value;
+      var end = document.getElementById('end').value;
+      this.$parent.weightFetch(start, end)
+    }
   }
 }
 </script>

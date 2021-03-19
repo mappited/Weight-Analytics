@@ -38,7 +38,6 @@ export default defineComponent({
   },
   mounted (){
     this.$forceUpdate()
-    console.log(this.option)
   },
   data: function () {
     return{

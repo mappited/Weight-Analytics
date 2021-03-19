@@ -63,10 +63,15 @@ export default {
         .then((res) => {
           var err_txt;
 
-          async function printError(txt) {
+          async function printError(txt, rtr) {
             res.json().then((value) => {
               err_txt = value.message
-              alert(txt + err_txt)
+              if(err_txt == "The session already exits"){
+                alert("Сессия уже существует, вы будете перенаправлены на нее.")
+                rtr.push('/Profile')
+              }else{
+                alert(txt + err_txt)
+              }
             });
           }
 
@@ -76,7 +81,7 @@ export default {
               break;
 
             case 401:
-              printError("Данный пользователь не найден. Ошибка: ")
+              printError("Данный пользователь не найден. Ошибка: ", this.$router)
               break;
 
             case 200:
