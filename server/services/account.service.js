@@ -15,7 +15,8 @@ class AccountService {
       email: data.email || "",
       password: data.password || ""
     });
-    return this._databaseProvider.createAccount(account);
+    await this._databaseProvider.createAccount(account);
+    return { status: "created", data: {"user_uuid": account.uuid }};
   }
 
   async verifyAccount(data) {

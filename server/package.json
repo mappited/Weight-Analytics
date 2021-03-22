@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "server": "[ ! -f .env ] && npm run init_env; . ./.env && cross-env WCS_FIREBASE_URL=$WCS_FIREBASE_URL GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS DEBUG=$DEBUG nodemon ./bin/www",
-    "firebase": "source ./.env && cross-env WCS_FIREBASE_URL=$WCS_FIREBASE_URL GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS DEBUG=$DEBUG node ./app_modules/firebase/index.js",
+    "server": "[ ! -f .env ]  && npm run init_env; . ./.env && nodemon ./bin/www",
+    "firebase": "source ./.env && node ./app_modules/firebase/index.js",
     "init_env": "node bin/init_env.js"
   },
   "repository": {
@@ -23,10 +23,13 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pg": "^8.5.1",
-    "pug": "^3.0.2",
+    "pug": "^3.0.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "eslint": "^7.22.0",
+    "nodemon": "^2.0.7",
+    "prettier": "2.2.1",
+    "prettier-eslint": "^12.0.0"
   }
 }

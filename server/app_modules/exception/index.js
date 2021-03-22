@@ -42,29 +42,67 @@ class InvalidCredentialsError extends ClientError {
   static MESSAGE = "Invalid credentials"
 }
 
-class AccuntAlreadyExistsError extends ClientError { 
+class AccuntAlreadyExistsError extends ClientError {
   static CODE = "ACCOUNT_ALREADY_EXISTS";
-  static MESSAGE = "Account already exits"
+  static MESSAGE = "The Account already exits"
 }
 
+class SessionNotFound extends ClientError {
+  static CODE = "SESSION_NOT_FOUND";
+  static MESSAGE = "Session not found"
+}
+
+class SessionAlreadyExistsError extends ClientError {
+  static CODE = "SESSION_ALREADY_EXISTS";
+  static MESSAGE = "The session already exits"
+}
+
+class MethodError extends ClientError {
+  static CODE = "METHOD_ERROR";
+  static MESSAGE = "Incorrect method";
+}
+
+class MassError extends ClientError {
+  static CODE = "MASS_ERROR";
+  static MESSAGE = "Mass error";
+}
+
+class InvalidDateError extends ClientError {
+  static CODE = "INVALID_DATE_ERROR";
+  static MESSAGE = "Invalid Date";
+}
+
+class BodyMassUniqueViolationError extends ClientError {
+  static CODE = "MASS_UNIQUE_VIOLATION";
+  static MESSAGE = "Body mass record already exits";
+}
 
 
 class HTTPError extends Exception {
   static CODE = 500;
-  static MESSAGE = "internal server error";
+  static MESSAGE = "Internal server error";
   static toHTTPError(error) {
     const data = { message: error.message, appErrorCode: error.code };
-    if (error instanceof EmailError) {
+    if (
+      error instanceof EmailError ||
+      error instanceof MethodError ||
+      error instanceof MassError ||
+      error instanceof BodyMassUniqueViolationError ||
+      error instanceof InvalidDateError
+    ) {
       Object.assign(data, { code: 400 });
     } else if (
       error instanceof InvalidCredentialsError ||
       error instanceof AccuntAlreadyExistsError ||
-      error instanceof PasswordIsNotSecure
+      error instanceof PasswordIsNotSecure ||
+      error instanceof SessionNotFound ||
+      error instanceof SessionAlreadyExistsError
     ) {
       Object.assign(data, { code: 401 });
     } else if (error instanceof EstabDBCError) {
       Object.assign(data, { code: 500 });
-    } 
+      Object.assign(data, { code: 406 });
+    }
     return new HTTPError(data);
   }
 }
@@ -77,5 +115,12 @@ module.exports = {
   EmailError,
   EstabDBCError,
   AccuntAlreadyExistsError,
+  InvalidCredentialsError,
+  SessionNotFound,
+  SessionAlreadyExistsError,
+  BodyMassUniqueViolationError,
+  MassError,
+  MethodError,
+  InvalidDateError,
   HTTPError
 }

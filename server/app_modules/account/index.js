@@ -10,8 +10,7 @@ class Account {
 
   static async createAccount({ email, password }, isSecurePassword = true){
     email = email.toLowerCase();
-    if (isSecurePassword && !(/^[a-z]\w*@\w+\.\w+$/i.test(email))) {
-      console.log(email);
+    if (isSecurePassword && !(/^[a-z][a-z_\-\.]*@\w+\.\w+$/i.test(email))) {
       throw new exception.EmailError();
     } else if (isSecurePassword && password.length < Account.PASSWD_MIN_LEN) {
       throw new exception.PasswordIsNotSecure();

@@ -30,7 +30,7 @@ CREATE UNIQUE INDEX user_idx_email ON wcs.user(email);
 CREATE TABLE IF NOT EXISTS wcs.body_mass (
   user_uuid UUID NOT NULL,
   mass REAL NOT NULL,
-  date DATE NOT NULL UNIQUE DEFAULT CURRENT_DATE,
+  date DATE NOT NULL DEFAULT CURRENT_DATE,
   PRIMARY KEY(user_uuid, date),
   FOREIGN KEY(user_uuid) REFERENCES wcs.user(uuid) ON DELETE CASCADE
 );
@@ -40,11 +40,14 @@ CREATE INDEX body_mass_idx_date ON wcs.body_mass(date);
 
 
 CREATE TABLE IF NOT EXISTS wcs.session (
+  uuid UUID NOT NULL PRIMARY KEY,
   user_uuid UUID NOT NULL,
   token TEXT NOT NULL UNIQUE,
   creation_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY(user_uuid, token, creation_time),
+  update_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY(user_uuid) REFERENCES wcs.user(uuid) ON DELETE CASCADE
 );
 
 CREATE INDEX session_idx_user_uuid ON wcs.session(user_uuid);
+CREATE INDEX session_idx_crt_uuid ON wcs.session(creation_time);
+CREATE INDEX session_idx_ut_uuid ON wcs.session(update_time);

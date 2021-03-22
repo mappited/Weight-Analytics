@@ -1,15 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const { sessionService } = require("../services/session.service");
 
 
 /* GET home page of the WCS */
 router.get("/", function(req, res, next) {
   res.render("index.html");
-  // res.render("index", { title: "Express" });
+  //res.render("index", { title: "Express" });
+  
 });
 
 // 
 router.get("/data", function(req, res, next) {
+  
+  console.log(sessionService.verifySession(req, res));
+
   res.json([
     {date: "2021-03-13", mass: 75.3},
     {date: "2021-03-14", mass: 74.9},
@@ -20,6 +25,5 @@ router.get("/data", function(req, res, next) {
   ])
 });
 
-router.post("")
 
 module.exports = router;
